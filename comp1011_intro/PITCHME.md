@@ -1,22 +1,21 @@
----?color=#6A246D
+#  COMP1101 Programming (Black) {data-background-color=#6A246D}
 
-#  COMP1101 Programming (Black)
-## Introduction to the module
+Introduction to the module
 
 ---
 
 ## Why choose this module (poll)?
 
-@ul
+::: incremental
+
 - To become more like a professional programmer
 - To learn how to do cool things
 - To stretch yourself
 - Not just for the marks
-@ulend
 
----?color=#6A246D
+:::
 
-# What tools do developers use (poll)?
+# What tools do developers use (poll)? {data-background-color=#6A246D}
 
 [...](https://www.jetbrains.com/lp/devecosystem-2021/)
 
@@ -33,7 +32,8 @@
 
 ## Assessment
 
-@ul
+::: incremental
+
 - Two assignments 
 - No exam
 - First assignment: single-page app web site
@@ -44,7 +44,8 @@
   - collaborate (open source, hackathon, competition)
   - reflect on what you have learned
 - See LU for deadlines
-@ulend
+
+:::
 
 ---
 
@@ -79,17 +80,19 @@
 
 ## Examples
 
-@ul
+::: incremental
+
 - This is a practically motivated course
 - What should we do as an example?
 - Previously have done cheese, memes, hats, Sue Black
 - Come up with a suggestion in a group of three
 - Then we will have a vote 
-@ulend
 
----?color=#a5c8d0 
+:::
 
-# Next time
+---
+
+# Next time {data-background-color=#a5c8d0}
 
 Version control with git
 

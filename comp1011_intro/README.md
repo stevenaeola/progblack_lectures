@@ -1,9 +1,10 @@
+#  COMP1101 Programming (Black) 
 
-#  COMP1101 Programming (Black)
-## Introduction to the module
+Introduction to the module
 
 
 ## Why choose this module (poll)?
+
 
 - To become more like a professional programmer
 - To learn how to do cool things
@@ -11,7 +12,7 @@
 - Not just for the marks
 
 
-# What tools do developers use (poll)?
+# What tools do developers use (poll)? 
 
 [...](https://www.jetbrains.com/lp/devecosystem-2021/)
 
@@ -26,6 +27,7 @@
 
 ## Assessment
 
+
 - Two assignments 
 - No exam
 - First assignment: single-page app web site
@@ -36,6 +38,7 @@
   - collaborate (open source, hackathon, competition)
   - reflect on what you have learned
 - See LU for deadlines
+
 
 
 ## Gold vs Black
@@ -66,6 +69,7 @@
 
 ## Examples
 
+
 - This is a practically motivated course
 - What should we do as an example?
 - Previously have done cheese, memes, hats, Sue Black
@@ -73,7 +77,8 @@
 - Then we will have a vote 
 
 
-# Next time
+
+# Next time 
 
 Version control with git
 
