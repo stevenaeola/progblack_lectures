@@ -7,5 +7,5 @@ pandoc  -V theme=simple -t revealjs -s PITCHME.md -o PITCHME.html
 
 git add .
 git commit -m "Working on presentation $PATHEND"
-git push -u origin master
+git push -u origin main
 
