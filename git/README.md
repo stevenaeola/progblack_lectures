@@ -9,7 +9,7 @@ Licensed under [Creative Commons Attribution 4.0 International](https://creative
 ![Piled Higher and Deeper](https://raw.githubusercontent.com/stevenaeola/progblack_lectures/main/git/phd101212s.png)
 
 
- “Piled Higher and Deeper” by Jorge Cham <http://www.phdcomics.com>)
+ “Piled Higher and Deeper” by Jorge Cham <http://www.phdcomics.com>
 
 
 ## Linear history

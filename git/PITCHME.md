@@ -12,7 +12,7 @@ Licensed under [Creative Commons Attribution 4.0 International](https://creative
 
 ---
 
- “Piled Higher and Deeper” by Jorge Cham <http://www.phdcomics.com>)
+ “Piled Higher and Deeper” by Jorge Cham <http://www.phdcomics.com>
 
 ---
 
