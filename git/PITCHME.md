@@ -8,7 +8,7 @@ Some material reused and adapted from [Version Control with Git](https://swcarpe
 
 Licensed under [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/)
 
-![Piled Higher and Deeperimage](https://raw.githubusercontent.com/stevenaeola/progblack_lectures/master/git/phd101212s.png)
+![Piled Higher and Deeperimage](https://raw.githubusercontent.com/stevenaeola/progblack_lectures/main/git/phd101212s.png)
 
 ---
 
@@ -18,19 +18,19 @@ Licensed under [Creative Commons Attribution 4.0 International](https://creative
 
 ## Linear history
 
-![linear development of a document](https://raw.githubusercontent.com/stevenaeola/progblack_lectures/master/git/play-changes.png)
+![linear development of a document](https://raw.githubusercontent.com/stevenaeola/progblack_lectures/main/git/play-changes.png)
 
 ---
 
 ## Multiple authors
 
-![different changes](https://raw.githubusercontent.com/stevenaeola/progblack_lectures/master/git/versions.png)
+![different changes](https://raw.githubusercontent.com/stevenaeola/progblack_lectures/main/git/versions.png)
 
 ---
 
 ## Merging changes
 
-![merges](https://raw.githubusercontent.com/stevenaeola/progblack_lectures/master/git/merge.png)
+![merges](https://raw.githubusercontent.com/stevenaeola/progblack_lectures/main/git/merge.png)
 
 ---
 
@@ -143,7 +143,7 @@ to avoid editor
 
 Pushes a branch to a remote repository
 
-`git push origin master`
+`git push origin main`
 
 `origin` defined by
 ```
@@ -153,6 +153,8 @@ or
 ```
 git clone
 ```
+
+Some sites called the default branch `master` instead of `main`
 
 ---
 
