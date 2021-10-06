@@ -1,5 +1,3 @@
----
-
 # Version control and git {data-background-color=#7E317B}
 
 ---
@@ -7,6 +5,8 @@
 Some material reused and adapted from [Version Control with Git](https://swcarpentry.github.io/git-novice/) by the [Software Carpentry Foundation](https://software-carpentry.org/)
 
 Licensed under [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/)
+
+---
 
 ![Piled Higher and Deeperimage](https://raw.githubusercontent.com/stevenaeola/progblack_lectures/main/git/phd101212s.png)
 
