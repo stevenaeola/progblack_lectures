@@ -8,7 +8,7 @@ Licensed under [Creative Commons Attribution 4.0 International](https://creative
 
 ---
 
-![Piled Higher and Deeperimage](https://raw.githubusercontent.com/stevenaeola/progblack_lectures/main/git/phd101212s.png)
+![Piled Higher and Deeperimage](https://raw.githubusercontent.com/stevenaeola/progblack_lectures/main/git/phd101212s.png) {height=90%}
 
 ---
 
