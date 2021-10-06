@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>PITCHME</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/simple.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+
+<section class="slide level2">
+
+</section>
+<section>
+<section id="version-control-and-git" class="title-slide slide level1" data-background-color="#7E317B">
+<h1 data-background-color="#7E317B">Version control and git</h1>
+
+</section>
+<section class="slide level2">
+
+<p>Some material reused and adapted from <a href="https://swcarpentry.github.io/git-novice/">Version Control with Git</a> by the <a href="https://software-carpentry.org/">Software Carpentry Foundation</a></p>
+<p>Licensed under <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International</a></p>
+<figure>
+<img data-src="https://raw.githubusercontent.com/stevenaeola/progblack_lectures/master/git/phd101212s.png" alt="Piled Higher and Deeperimage" /><figcaption aria-hidden="true">Piled Higher and Deeperimage</figcaption>
+</figure>
+</section>
+<section class="slide level2">
+
+<p>“Piled Higher and Deeper” by Jorge Cham <a href="http://www.phdcomics.com" class="uri">http://www.phdcomics.com</a>)</p>
+</section>
+<section id="linear-history" class="slide level2">
+<h2>Linear history</h2>
+<figure>
+<img data-src="https://raw.githubusercontent.com/stevenaeola/progblack_lectures/master/git/play-changes.png" alt="linear development of a document" /><figcaption aria-hidden="true">linear development of a document</figcaption>
+</figure>
+</section>
+<section id="multiple-authors" class="slide level2">
+<h2>Multiple authors</h2>
+<figure>
+<img data-src="https://raw.githubusercontent.com/stevenaeola/progblack_lectures/master/git/versions.png" alt="different changes" /><figcaption aria-hidden="true">different changes</figcaption>
+</figure>
+</section>
+<section id="merging-changes" class="slide level2">
+<h2>Merging changes</h2>
+<figure>
+<img data-src="https://raw.githubusercontent.com/stevenaeola/progblack_lectures/master/git/merge.png" alt="merges" /><figcaption aria-hidden="true">merges</figcaption>
+</figure>
+</section>
+<section id="version-control-software" class="slide level2">
+<h2>Version control software</h2>
+<div>
+<ul>
+<li class="fragment">Revision Control System (RCS)</li>
+<li class="fragment">Concurrent Versions System (CVS)</li>
+<li class="fragment">Microsoft Word Track Changes</li>
+<li class="fragment">Subversion</li>
+<li class="fragment">git</li>
+<li class="fragment">mercurial</li>
+<li class="fragment">darcs</li>
+</ul>
+</div>
+</section>
+<section id="all-about-git" class="slide level2">
+<h2>All about git</h2>
+<ul>
+<li>Distributed version control system</li>
+<li>Developed by Linus Torvalds and others to manage the Linux kernel</li>
+<li>Linus named it after himself</li>
+<li>Designed to be fast</li>
+<li>Very widely used in academia and industry</li>
+</ul>
+</section>
+<section id="the-linux-kernel-development-under-git" class="slide level2">
+<h2>The Linux kernel development under git</h2>
+<p><a href="https://www.youtube.com/watch?v=MkJxlKD2bjk">Visualised with gource</a></p>
+</section>
+<section id="git-under-the-hood" class="slide level2">
+<h2>git under the hood</h2>
+<ul>
+<li>Different from earlier systems such as RCS, CVS and Subversion: no diffs</li>
+<li>Originally developed under Linux, but available elsewhere</li>
+<li>No central repository, but can synchronise with remotes</li>
+<li>Cloud-hosted repository servers: github; gitlab; bitbucket</li>
+</ul>
+<p>Recommend you use github with education: free private repositories</p>
+</section>
+<section id="key-concepts-in-git" class="slide level2">
+<h2>Key concepts in git</h2>
+<div>
+<ul>
+<li class="fragment">A <strong>file</strong> (in a path)</li>
+<li class="fragment">A <strong>commit</strong>: a snapshot of a collection of files at a particular time</li>
+<li class="fragment">A <strong>branch</strong>: a linear sequence of commits</li>
+<li class="fragment">A <strong>repository</strong>: (possibly) many branches of a project</li>
+<li class="fragment">A <strong>remote</strong>: another place where a repository is stored</li>
+</ul>
+</div>
+</section>
+<section id="key-commands-in-git" class="slide level2">
+<h2>Key commands in git</h2>
+<p>Working on the command line</p>
+<pre><code>git init
+git add
+git status
+git commit
+git push</code></pre>
+</section>
+<section id="git-init" class="slide level2">
+<h2>git init</h2>
+<p>Creates a directory <code>.git</code> where everything is stored</p>
+<p>You may also want to do <code>git config</code> at this stage</p>
+<p>Think about adding a <code>.gitignore</code> file</p>
+</section>
+<section id="git-add" class="slide level2">
+<h2>git add</h2>
+<p>Puts the current working version of a file into the staging area</p>
+<p>Preparing for a commit</p>
+<p>Check what will be committed with <code>git status</code></p>
+</section>
+<section id="git-commit" class="slide level2">
+<h2>git commit</h2>
+<p>Makes a commit based on currently staged files</p>
+<p>Will start an editor (see git config)</p>
+<p>Consider</p>
+<pre><code>git commit -m &quot;message&quot;</code></pre>
+<p>to avoid editor</p>
+</section>
+<section id="git-push" class="slide level2">
+<h2>git push</h2>
+<p>Pushes a branch to a remote repository</p>
+<p><code>git push origin master</code></p>
+<p><code>origin</code> defined by</p>
+<pre><code>git remote add origin</code></pre>
+<p>or</p>
+<pre><code>git clone</code></pre>
+</section>
+<section id="see-also" class="slide level2">
+<h2>See also</h2>
+<ul>
+<li><a href="https://confluence.atlassian.com/bitbucketserver/basic-git-commands-776639767.html">Summary of main commands</a></li>
+<li><a href="https://www.atlassian.com/git/tutorials">Useful tutorials in particular Getting Started and Collaborating</a></li>
+<li><a href="https://jwiegley.github.io/git-from-the-bottom-up/">Git from the bottom up</a> an explanation of how git works</li>
+</ul>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
