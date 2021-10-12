@@ -1,8 +1,7 @@
 
 
 # HTML {data-background-color=#7E317B}
-
-## HyperText Markup Language
+HyperText Markup Language
 
 --- 
 
@@ -28,7 +27,8 @@
 
 ## HTML tags
 
-(In groups) 
+(In groups)
+
 * Introduce yourselves
 * List the HTML tags you are familiar with 
   - five minutes

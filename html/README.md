@@ -1,8 +1,7 @@
 
 
 # HTML 
-
-## HyperText Markup Language
+HyperText Markup Language
 
 
 ## Last time 
@@ -23,7 +22,8 @@
 
 ## HTML tags
 
-(In groups) 
+(In groups)
+
 * Introduce yourselves
 * List the HTML tags you are familiar with 
   - five minutes
