@@ -25,19 +25,22 @@
     <div class="slides">
 
 
-<section class="slide level2">
-
-<p>—?color=#7E317B</p>
-</section>
 <section>
-<section id="git-branching" class="title-slide slide level1">
-<h1>git branching</h1>
+<section id="git-branching" class="title-slide slide level1" data-background-color="#7E317B">
+<h1 data-background-color="#7E317B">git branching</h1>
 
 </section>
 <section id="today-we-are-going-to" class="slide level2">
 <h2>Today we are going to</h2>
-<p><span class="citation" data-cites="ul">@ul</span> - Review git branching - Identify some issues with our example - make it editable via <a href="https://github.com/stevenaeola/gitpitch/blob/master/prog/js_dom/README.md">DOM actions</a> - Work on the issue(s) one at a time in groups - Make pull requests - Merge in the pull requests</p>
-<p><span class="citation" data-cites="ulend">@ulend</span></p>
+<div>
+<ul>
+<li class="fragment">Identify some issues with our example</li>
+<li class="fragment">Work on the issue(s) one at a time in groups</li>
+<li class="fragment">Make pull requests</li>
+<li class="fragment">Merge in the pull requests</li>
+<li class="fragment">Review git branching</li>
+</ul>
+</div>
 </section>
 <section class="slide level2">
 
@@ -47,45 +50,55 @@
 <h1>Choose some issues</h1>
 
 </section>
-<section id="git-revisited-basic-branching" class="slide level2">
-<h2>git revisited: basic branching</h2>
-<p><span class="citation" data-cites="ul">@ul</span> - create a branch with <code>git branch iss52</code> - check it out with <code>git checkout iss52</code> - do some work, <code>add</code> and <code>commit</code> - go back to the main branch: <code>git checkout main</code> - merge your branch: <code>git merge iss52</code> - delete your branch: <code>git branch -d iss52</code> <span class="citation" data-cites="ulend">@ulend</span></p>
-</section>
-<section id="what-is-the-point-of-all-that" class="slide level2">
-<h2>What is the point of all that?</h2>
-<ul>
-<li>Different people can work on different features</li>
-<li>Before merging you can update with <code>git pull</code></li>
-<li>Automatically merges and identifies issues</li>
-<li>See also <a href="https://git-scm.com/book/en/v2/Git-Branching-Rebasing"><code>git rebase</code></a></li>
-</ul>
+<section class="slide level2">
+
 </section>
 <section id="working-with-multiple-remotesbranches" class="slide level2">
 <h2>Working with multiple remotes/branches</h2>
-<p><span class="citation" data-cites="ul">@ul</span> - Common open source model - you don’t have permission to push directly - Fork the repo at github (c.f. clone to local) - clone your forked repo into your local machine - add the original as upstream repo with <a href="https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/configuring-a-remote-for-a-fork">set remote</a> - you can <code>git push</code> and <code>git pull</code> with your forked repo - you can only <code>git pull</code> with your upstream repo <span class="citation" data-cites="ulend">@ulend</span></p>
-</section>
-<section id="lets-do-it-set-up" class="slide level2">
-<h2>Let’s do it: set up</h2>
+<div>
 <ul>
-<li>One of you operate the keyboard and share screen</li>
-<li>Fork, clone and set upstream remote</li>
-<li>This may go horribly wrong: embrace failure!</li>
+<li class="fragment">Common open source model
+<ul>
+<li class="fragment">you don’t have permission to push directly</li>
+</ul></li>
+<li class="fragment">Fork the repo at github (c.f. clone to local)</li>
+<li class="fragment">clone your forked repo into your local machine</li>
+<li class="fragment">add the original as upstream repo with <a href="https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/configuring-a-remote-for-a-fork">set remote</a></li>
+<li class="fragment">you can <code>git push</code> and <code>git pull</code> with your forked repo</li>
+<li class="fragment">you can only <code>git pull</code> with your upstream repo</li>
 </ul>
+</div>
+</section>
+<section id="an-example" class="slide level2">
+<h2>An example</h2>
+<div>
+<p>I use <a href="https://nodered.org/">node-red</a> for <a href="https://flows.nodered.org/node/node-red-contrib-music">music</a> - Users can contribute custom nodes - I wanted to have a weighted random distribution - But somebody else had already built a <a href="https://flows.nodered.org/node/node-red-contrib-random-output">node for randomising</a> - So <a href="https://github.com/lutzer/node-red-contrib-random-output/issues/1">I asked if they would accept a pull request</a> - Then I <a href="https://github.com/stevenaeola/node-red-contrib-random-output">forked their repo</a> - And I <a href="https://github.com/lutzer/node-red-contrib-random-output/pull/2">made a pull request</a></p>
+</div>
+<table style="width:6%;">
+<colgroup>
+<col style="width: 5%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>## Let’s do it: set up</td>
+</tr>
+<tr class="even">
+<td>- One of you operate the keyboard and share screen - Fork the <a href="https://github.com/stevenaeola/goats">goats</a>, clone and set upstream remote - This may go horribly wrong: embrace failure!</td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="lets-do-it-repeat" class="slide level2">
 <h2>Let’s do it: repeat</h2>
 <ul>
-<li>Create an issue branch (numbered with github issue number)</li>
+<li>Create/choose an issue on github</li>
 <li>Change your local code to address the issue</li>
-<li>Add and commit your change (to the issue branch)
-<ul>
-<li>Do not merge your issue branch into main</li>
-</ul></li>
-<li>push your branch to forked repo <code>git push origin issNN</code></li>
+<li>Add and commit your change (to main branch)</li>
+<li>push your branch to forked repo <code>git push origin main</code></li>
 <li>on github <a href="https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request-from-a-fork">make a pull request (PR)</a>
 <ul>
-<li>from the issue branch on your fork</li>
-<li>to the master branch on the upstream repo</li>
+<li>from the main branch on your fork</li>
+<li>to the main branch on the upstream repo</li>
 </ul></li>
 </ul>
 </section>
@@ -97,16 +110,48 @@
 <h1>Select a PR to be merged</h1>
 
 </section>
+<section id="git-revisited-basic-branching" class="slide level2">
+<h2>git revisited: basic branching</h2>
+<div>
+<ul>
+<li class="fragment">good for when you’re working on more than issue</li>
+<li class="fragment">create a branch with <code>git branch iss52</code></li>
+<li class="fragment">check it out with <code>git checkout iss52</code></li>
+<li class="fragment">do some work, <code>add</code> and <code>commit</code></li>
+<li class="fragment">go back to the main branch: <code>git checkout main</code></li>
+<li class="fragment">merge your branch: <code>git merge iss52</code></li>
+<li class="fragment">delete your branch: <code>git branch -d iss52</code></li>
+</ul>
+</div>
+</section>
 <section id="lets-do-it-again" class="slide level2">
 <h2>Let’s do it again</h2>
 <ul>
-<li>If your PR wasn’t chosen you might want to remove that branch</li>
-<li>Switch to master <code>git checkout master</code></li>
-<li>Pull the changes from upstream
+<li>Create an issue branch (numbered with github issue number)</li>
+<li>Change your local code to address the issue</li>
+<li>Add and commit your change (to the issue branch)
 <ul>
-<li><code>git pull upstream</code></li>
+<li>Do not merge your issue branch into main</li>
 </ul></li>
-<li>Repeat new issue branch/commit/push/PR</li>
+<li>push your branch to forked repo <code>git push origin issNN</code></li>
+<li>on github <a href="https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request-from-a-fork">make a pull request (PR)</a>
+<ul>
+<li>from the issue branch on your fork</li>
+<li>to the main branch on the upstream repo</li>
+</ul></li>
+</ul>
+</section>
+<section id="and-then" class="slide level2">
+<h2>And then …</h2>
+<p>If your PR is accepted - Switch to main <code>git checkout main</code> - Pull the changes from upstream - <code>git pull upstream</code> - Repeat new issue branch/commit/push/PR When your PR is accepted/rejected - you might want to remove that branch</p>
+</section>
+<section id="what-is-the-point-of-all-that" class="slide level2">
+<h2>What is the point of all that?</h2>
+<ul>
+<li>Different people can work on different features</li>
+<li>Before merging you can update with <code>git pull</code></li>
+<li>Automatically merges and identifies issues</li>
+<li>See also <a href="https://git-scm.com/book/en/v2/Git-Branching-Rebasing"><code>git rebase</code></a></li>
 </ul>
 </section></section>
     </div>
