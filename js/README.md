@@ -8,7 +8,7 @@
 - Not Java
 - It has some good parts
 - Standardised by Ecma (once ECMA) as EcmaScript
-- Current version is [ES11 (2020)](https://medium.com/codingtown/ecmascript-2020-aka-es-11-9c547f69d96f)
+- Current version is [ES12 (2021)](https://backbencher.dev/articles/javascript-es2021-new-features)
 - Most recent widely-supported version is ES6 (2015)
 - [Support varies](http://kangax.github.io/compat-table/es6/)
 
