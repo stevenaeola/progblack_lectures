@@ -166,6 +166,7 @@ See also `while`, `for`, `switch`, `do`, `throw`, `try`, `catch`, ternary
 ## true, false, truthy and falsy
 
 These are all ['falsy'](https://developer.mozilla.org/en-US/docs/Glossary/Falsy):
+
 - false
 - undefined
 - null
