@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>PITCHME</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/simple.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+
+<section>
+<section id="javascript" class="title-slide slide level1" data-background-color="#7E317B">
+<h1 data-background-color="#7E317B">JavaScript</h1>
+
+</section>
+<section id="history" class="slide level2">
+<h2><a href="https://app.pluralsight.com/player?name=javascript-good-parts-m2&amp;mode=live&amp;clip=0&amp;course=javascript-good-parts&amp;author=douglas-crockford">History</a></h2>
+<div>
+<ul>
+<li class="fragment">Originally in browsers</li>
+<li class="fragment">Not Java</li>
+<li class="fragment">It has some good parts <span class="citation" data-cites="fa">@fa [smile]</span></li>
+<li class="fragment">Standardised by Ecma (once ECMA) as EcmaScript</li>
+<li class="fragment">Current version is <a href="https://medium.com/codingtown/ecmascript-2020-aka-es-11-9c547f69d96f">ES11 (2020)</a></li>
+<li class="fragment">Most recent widely-supported version is ES6 (2015)</li>
+<li class="fragment"><a href="http://kangax.github.io/compat-table/es6/">Support varies</a></li>
+</ul>
+</div>
+</section>
+<section id="client--and-server--side" class="slide level2">
+<h2>Client- and server- side</h2>
+<div>
+<ul>
+<li class="fragment">More recently JS is also used server-side: nodejs</li>
+<li class="fragment">Good JS engines in mobile browsers</li>
+<li class="fragment">JS often used for cross-platform App dev with <a href="https://web.dev/progressive-web-apps/">Progressive Web Apps</a></li>
+<li class="fragment">Also for desktop applications with <a href="https://electronjs.org/">electron</a> e.g. <a href="https://atom.io/">atom</a></li>
+<li class="fragment">Interpreted, not compiled: errors only happen at run-time</li>
+<li class="fragment"><code>console.log</code> is your friend</li>
+</ul>
+</div>
+</section>
+<section id="hello-world" class="slide level2">
+<h2>Hello world</h2>
+<ul>
+<li>Embed JavaScript in a web page</li>
+<li>Use <code>script</code> tag</li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;html&gt;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;script&gt;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">&quot;Hello World&quot;</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;/script&gt;</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
+</section>
+<section id="what-just-happened" class="slide level2">
+<h2>What just happened?</h2>
+<p>Nothing?</p>
+<p>Looks the same as this</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;html&gt;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;script&gt;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    vljbsv123456789<span class="op">!</span>@£$<span class="op">%^&amp;*</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;/script&gt;</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
+<p>Use developer tools to see the console output and error, or for <a href="https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop">REPL</a></p>
+</section>
+<section id="hello-again" class="slide level2">
+<h2>Hello again</h2>
+<p>In the browser we can also use the <code>alert</code> function</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;html&gt;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;script&gt;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">alert</span>(<span class="st">&quot;Hello World&quot;</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;/script&gt;</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
+<p>Can run in browser as file, not just with http</p>
+</section>
+<section id="importing-code" class="slide level2">
+<h2>Importing code</h2>
+<ul>
+<li>Link to external javascript code with <code>src</code> attribute</li>
+<li>Usually placed at end or in <code>head</code></li>
+<li>Can refer to files in same source</li>
+<li>Can refer to external files via http</li>
+<li>Content Delivery Networks (CDN)</li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ot"> src=</span><span class="st">&quot;https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/script&gt;</span></span></code></pre></div>
+</section>
+<section id="syntax" class="slide level2">
+<h2>Syntax</h2>
+<div>
+<ul>
+<li class="fragment">Mostly insensitive to white space (not python)</li>
+<li class="fragment">Case sensitive (not php)</li>
+<li class="fragment">Block structured, with braces (like Java)</li>
+<li class="fragment">Semicolons at the end of lines can be inferred</li>
+<li class="fragment">“use strict”; good practice</li>
+<li class="fragment">Use <code>require</code> for modules in nodejs (many ways in browser)</li>
+</ul>
+</div>
+</section>
+<section id="variables-and-scope" class="slide level2">
+<h2>Variables and scope</h2>
+<ul>
+<li>Variables must be declared (in strict mode)</li>
+<li>Can declare with
+<ul>
+<li><code>var</code> (old-style function scope)</li>
+<li><code>let</code> (new-style block scope)</li>
+<li><code>const</code> (new-style block scope)</li>
+</ul></li>
+<li><code>var</code> declarations are ‘hoisted’ to the top of the block</li>
+<li>In non-strict undeclared variables are global</li>
+</ul>
+</section>
+<section id="types" class="slide level2">
+<h2>Types</h2>
+<p>Six primitive types</p>
+<div>
+<ul>
+<li class="fragment">boolean (<code>true</code> and <code>false</code>)</li>
+<li class="fragment">null</li>
+<li class="fragment">undefined</li>
+<li class="fragment">number (no separate int) see <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math">Math</a></li>
+<li class="fragment">string see <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></li>
+<li class="fragment"><a href="https://developer.mozilla.org/en-US/docs/Glossary/Symbol">symbol</a> (immutable)</li>
+<li class="fragment">Also objects and functions (non-primitive)</li>
+</ul>
+</div>
+</section>
+<section id="using-types" class="slide level2">
+<h2>Using types</h2>
+<ul>
+<li>Values have types</li>
+<li>No type for variable declarations: dynamic typing</li>
+<li>Function parameters do not have types</li>
+<li>Might choose to document e.g. parameters with comments</li>
+<li><code>typeof</code> find the type of a value</li>
+</ul>
+</section>
+<section id="control-structures" class="slide level2">
+<h2>Control structures</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (condition) {</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  statement_1<span class="op">;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  statement_2<span class="op">;</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p>See also <code>while</code>, <code>for</code>, <code>switch</code>, <code>do</code>, <code>throw</code>, <code>try</code>, <code>catch</code>, ternary</p>
+</section>
+<section id="true-false-truthy-and-falsy" class="slide level2">
+<h2>true, false, truthy and falsy</h2>
+<p>These are all <a href="https://developer.mozilla.org/en-US/docs/Glossary/Falsy">‘falsy’</a>: - false - undefined - null - 0 - NaN - the empty string ("")</p>
+</section>
+<section class="slide level2">
+
+<p>Can use for default values e.g</p>
+<pre><code>let x = x || 4;</code></pre>
+<p>Useful when</p>
+<ul>
+<li>optional parameters have not been provided</li>
+<li>object properties might not have been initialised</li>
+</ul>
+</section>
+<section id="functions" class="slide level2">
+<h2>functions</h2>
+<ul>
+<li>Are first-class objects and can be
+<ul>
+<li>assigned to variables</li>
+<li>passed as parameters</li>
+</ul></li>
+<li>Often used for defining event callbacks</li>
+<li>Don’t have to be associated with objects but can be</li>
+</ul>
+<div class="sourceCode" id="cb7"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">sum</span>(a<span class="op">,</span> b){</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>   <span class="cf">return</span> a<span class="op">+</span>b<span class="op">;</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</section>
+<section id="functions-as-values" class="slide level2">
+<h2>functions as values</h2>
+<p>Almost equivalent is</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> sum <span class="op">=</span> <span class="kw">function</span> (a<span class="op">,</span> b){</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a<span class="op">+</span>b<span class="op">;</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p>or</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> sum2 <span class="op">=</span> (a<span class="op">,</span>b) <span class="kw">=&gt;</span> a<span class="op">+</span>b<span class="op">;</span></span></code></pre></div>
+</section>
+<section id="arrays" class="slide level2">
+<h2>Arrays</h2>
+<p>Square bracket notation: like python, Java, C</p>
+<p>These are equivalent:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> arr <span class="op">=</span> <span class="kw">new</span> <span class="bu">Array</span>(<span class="dv">1</span><span class="op">,</span><span class="dv">2</span><span class="op">,</span><span class="dv">3</span>)<span class="op">;</span></span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> arr <span class="op">=</span> <span class="bu">Array</span>(<span class="dv">1</span><span class="op">,</span><span class="dv">2</span><span class="op">,</span><span class="dv">3</span>)<span class="op">;</span></span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> arr <span class="op">=</span> [<span class="dv">1</span><span class="op">,</span><span class="dv">2</span><span class="op">,</span><span class="dv">3</span>]<span class="op">;</span></span></code></pre></div>
+<p>Arrays can contain elements of different types</p>
+</section>
+<section id="array-iteration" class="slide level2">
+<h2>Array iteration</h2>
+<div class="sourceCode" id="cb13"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(<span class="kw">let</span> i<span class="op">=</span><span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> arr<span class="op">.</span><span class="at">length</span><span class="op">;</span> i<span class="op">++</span>){</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>   <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(arr[i])<span class="op">;</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p>See methods in <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> e.g.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>arr<span class="op">.</span><span class="fu">push</span>(<span class="dv">4</span>)<span class="op">;</span></span></code></pre></div>
+</section>
+<section id="objects" class="slide level2">
+<h2>Objects</h2>
+<p><span class="citation" data-cites="ul">@ul</span> - Objects have named properties - Properties can have any type (including object, function) - A bit like Java Map and python Dictionary - Create with <code>Object</code> constructor or literal syntax - Access with dot or bracket - Inheritance through prototypes</p>
+</section>
+<section class="slide level2">
+
+<div class="sourceCode" id="cb15"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> myCar <span class="op">=</span> <span class="kw">new</span> <span class="bu">Object</span>()<span class="op">;</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>myCar<span class="op">.</span><span class="at">make</span> <span class="op">=</span> <span class="st">&#39;VW&#39;</span><span class="op">;</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>myCar<span class="op">.</span><span class="at">model</span> <span class="op">=</span> <span class="st">&#39;Touran&#39;</span><span class="op">;</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(myCar<span class="op">.</span><span class="at">make</span>)<span class="op">;</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(myCar[<span class="st">&#39;make&#39;</span>])<span class="op">;</span></span></code></pre></div>
+</section>
+<section id="see-also" class="slide level2">
+<h2>See also</h2>
+<ul>
+<li>modules: require and module.exports</li>
+<li>regexps</li>
+<li>backticks (string expansion)</li>
+<li>Set, Map</li>
+<li>spread operator</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide" class="uri">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide</a></li>
+<li><a href="https://www.theodinproject.com/courses/web-development-101/" class="uri">https://www.theodinproject.com/courses/web-development-101/</a></li>
+<li><a href="https://www.w3schools.com/js/default.asp" class="uri">https://www.w3schools.com/js/default.asp</a></li>
+</ul>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
