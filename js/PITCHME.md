@@ -81,14 +81,14 @@ Can run in browser as file, not just with http
 ## Importing code
 
 
-- Link to external javascript code with `src` attribute
+- Link to external JavaScript code with `src` attribute
 - Usually placed at end or in `head`
 - Can refer to files in same source
 - Can refer to external files via http
 - Content Delivery Networks (CDN)
 ```HTML
 <script
- src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js">
+ src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js">
 </script>
 ```
 
