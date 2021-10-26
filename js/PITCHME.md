@@ -8,7 +8,7 @@
 
 - Originally in browsers
 - Not Java
-- It has some good parts @fa[smile]
+- It has some good parts
 - Standardised by Ecma (once ECMA) as EcmaScript
 - Current version is [ES11 (2020)](https://medium.com/codingtown/ecmascript-2020-aka-es-11-9c547f69d96f)
 - Most recent widely-supported version is ES6 (2015)
@@ -258,13 +258,16 @@ arr.push(4);
 
 ## Objects
 
-@ul
+::: incremental
+
 - Objects have named properties
 - Properties can have any type (including object, function)
 - A bit like Java Map and python Dictionary
 - Create with `Object` constructor or literal syntax
 - Access with dot or bracket
 - Inheritance through prototypes
+
+:::
 
 ---
 
