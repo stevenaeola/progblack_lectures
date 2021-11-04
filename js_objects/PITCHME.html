@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>PITCHME</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/simple.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+
+<section>
+<section id="javascript-objects" class="title-slide slide level1" data-background-color="#7E317B">
+<h1 data-background-color="#7E317B">Javascript Objects</h1>
+
+</section>
+<section id="collection-of-properties" class="slide level2">
+<h2>Collection of properties</h2>
+<p>Each property is named (with a key) and has a value</p>
+<p>In object literal notation (like JavaScript Object Notation (JSON)) we can write</p>
+<pre><code>let pet = {height: 0.76, weight: 80, species: &quot;goat&quot;};</code></pre>
+</section>
+<section id="obj.prop" class="slide level2">
+<h2>obj.prop</h2>
+<p>Access properties like this</p>
+<pre><code>let coatLength = pet.height;
+pet.weight += 5;
+pet[&quot;colour&quot;] = &quot;red&quot;; # no declaration required
+</code></pre>
+</section>
+<section id="function-valued-properties" class="slide level2">
+<h2>Function-valued properties</h2>
+<p>Object properties can be any type, including functions</p>
+<pre><code>pet.draw = function(){ alert(&quot;I am a pet&quot;);}
+pet.draw();</code></pre>
+</section>
+<section id="this" class="slide level2">
+<h2>this</h2>
+<p><code>this</code> refers to the object it was called on</p>
+<pre><code>pet.draw = function(){
+    alert(&quot;I am a pet this big: &quot; + this.height);
+}
+pet.draw();
+</code></pre>
+</section>
+<section id="of-and-in" class="slide level2">
+<h2>of and in</h2>
+<p>In a <code>for</code> loop over a list you can use <code>of</code></p>
+<pre><code>for (let x of [1,2,3]){console.log(x)}</code></pre>
+<p>In a <code>for</code> loop over an object you can use <code>in</code> (gives keys)</p>
+<pre><code>const me = {name: &#39;Steven&#39;, game: &#39;Lecturer&#39;};
+for(let k in me){
+    console.log(&#39;I have a &#39; + k);
+    console.log(&#39;It is &#39; + me[k]);
+}</code></pre>
+</section>
+<section id="prototypal-inheritance" class="slide level2">
+<h2>Prototypal Inheritance</h2>
+<div>
+<ul>
+<li class="fragment">Every object has a property <code>__proto__</code> which refers to another object</li>
+<li class="fragment">If a property isn’t found in an object’s own properties, then <code>__proto__</code> is checked</li>
+<li class="fragment">Every function has a property <code>prototype</code> which is used when creating an object</li>
+<li class="fragment">The <code>new</code> keyword is used with a constructor function to create an object and set its <code>__proto__</code></li>
+<li class="fragment">Read more at <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain">MDN</a></li>
+</ul>
+</div>
+</section>
+<section id="inheriting-behaviour" class="slide level2">
+<h2>Inheriting behaviour</h2>
+<div>
+<ul>
+<li class="fragment">In other languages (e.g Java, C#) every object belongs to a <em>class</em>
+<ul>
+<li class="fragment">Data values (fields) are associated with objects</li>
+<li class="fragment">Behaviour (methods) are associated with classes</li>
+</ul></li>
+<li class="fragment">Things of the same type (class) can do the same things</li>
+<li class="fragment">JS is more flexible: each object can define its own behaviour</li>
+<li class="fragment">JS allows inheritance (common behaviour) through prototypes</li>
+</ul>
+</div>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>Java uses <em>class-based inheritance</em></li>
+<li>JS use <em>prototypal inheritance</em></li>
+</ul>
+</section>
+<section id="emulating-classes-in-js" class="slide level2">
+<h2>Emulating classes in JS</h2>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes">Simple syntax for constructors and prototype functions</a></p>
+<pre><code>class Pet{
+   constructor(h, w, s){
+      this.height = h;
+      this.weight = w;
+      this.species = s;
+   }
+   draw(){
+       alert(&quot;I am a pet this big: &quot; + this.height);
+   }
+}
+let p = new Pet(0.76, 80, &quot;goat&quot;);
+p.draw();
+</code></pre>
+</section>
+<section id="why-classes" class="slide level2">
+<h2>Why classes?</h2>
+<p><span class="citation" data-cites="ul">@ul</span> - Reduces cut-and-paste: eases maintenance - Encourages <em>encapsulation</em>: hide the details so they can be changed easily - No global variables: no clashes - Make reusable components with classes - Reuse in the same project (multiple pets) or in different projects <span class="citation" data-cites="ulend">@ulend</span></p>
+</section>
+<section id="git-revisited-basic-branching" class="slide level2">
+<h2>git revisited: basic branching</h2>
+<p><span class="citation" data-cites="ul">@ul</span> - create a branch with <code>git branch iss52</code> - check it out with <code>git checkout iss52</code> - do some work, <code>add</code> and <code>commit</code> - go back to the main branch: <code>git checkout main</code> - merge your branch: <code>git merge iss52</code> - delete your branch: <code>git branch -d iss52</code> <span class="citation" data-cites="ulend">@ulend</span></p>
+</section>
+<section id="what-is-the-point-of-all-that" class="slide level2">
+<h2>What is the point of all that?</h2>
+<ul>
+<li>Different people can work on different features</li>
+<li>Before merging you can update with <code>git pull</code></li>
+<li>Automatically merges and identifies issues</li>
+<li>See also <a href="https://git-scm.com/book/en/v2/Git-Branching-Rebasing"><code>git rebase</code></a></li>
+</ul>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
