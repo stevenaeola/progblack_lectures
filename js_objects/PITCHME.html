@@ -25,33 +25,35 @@
     <div class="slides">
 
 
-<section>
-<section id="javascript-objects" class="title-slide slide level1" data-background-color="#7E317B">
-<h1 data-background-color="#7E317B">Javascript Objects</h1>
-
+<section id="javascript-objects" class="slide level1" data-background-color="#7E317B">
+<h1 data-background-color="#7E317B">JavaScript Objects</h1>
 </section>
-<section id="collection-of-properties" class="slide level2">
-<h2>Collection of properties</h2>
+<section class="slide level1">
+
+<h2 id="collection-of-properties">Collection of properties</h2>
 <p>Each property is named (with a key) and has a value</p>
 <p>In object literal notation (like JavaScript Object Notation (JSON)) we can write</p>
 <pre><code>let pet = {height: 0.76, weight: 80, species: &quot;goat&quot;};</code></pre>
 </section>
-<section id="obj.prop" class="slide level2">
-<h2>obj.prop</h2>
+<section class="slide level1">
+
+<h2 id="obj.prop">obj.prop</h2>
 <p>Access properties like this</p>
 <pre><code>let coatLength = pet.height;
 pet.weight += 5;
-pet[&quot;colour&quot;] = &quot;red&quot;; # no declaration required
+pet[&quot;colour&quot;] = &quot;red&quot;; // no declaration required
 </code></pre>
 </section>
-<section id="function-valued-properties" class="slide level2">
-<h2>Function-valued properties</h2>
+<section class="slide level1">
+
+<h2 id="function-valued-properties">Function-valued properties</h2>
 <p>Object properties can be any type, including functions</p>
 <pre><code>pet.draw = function(){ alert(&quot;I am a pet&quot;);}
 pet.draw();</code></pre>
 </section>
-<section id="this" class="slide level2">
-<h2>this</h2>
+<section class="slide level1">
+
+<h2 id="this">this</h2>
 <p><code>this</code> refers to the object it was called on</p>
 <pre><code>pet.draw = function(){
     alert(&quot;I am a pet this big: &quot; + this.height);
@@ -59,10 +61,11 @@ pet.draw();</code></pre>
 pet.draw();
 </code></pre>
 </section>
-<section id="of-and-in" class="slide level2">
-<h2>of and in</h2>
+<section class="slide level1">
+
+<h2 id="of-and-in">of and in</h2>
 <p>In a <code>for</code> loop over a list you can use <code>of</code></p>
-<pre><code>for (let x of [1,2,3]){console.log(x)}</code></pre>
+<pre><code>for (let x of [1,2,3]){console.log(x)};</code></pre>
 <p>In a <code>for</code> loop over an object you can use <code>in</code> (gives keys)</p>
 <pre><code>const me = {name: &#39;Steven&#39;, game: &#39;Lecturer&#39;};
 for(let k in me){
@@ -70,8 +73,9 @@ for(let k in me){
     console.log(&#39;It is &#39; + me[k]);
 }</code></pre>
 </section>
-<section id="prototypal-inheritance" class="slide level2">
-<h2>Prototypal Inheritance</h2>
+<section class="slide level1">
+
+<h2 id="prototypal-inheritance">Prototypal Inheritance</h2>
 <div>
 <ul>
 <li class="fragment">Every object has a property <code>__proto__</code> which refers to another object</li>
@@ -82,8 +86,9 @@ for(let k in me){
 </ul>
 </div>
 </section>
-<section id="inheriting-behaviour" class="slide level2">
-<h2>Inheriting behaviour</h2>
+<section class="slide level1">
+
+<h2 id="inheriting-behaviour">Inheriting behaviour</h2>
 <div>
 <ul>
 <li class="fragment">In other languages (e.g Java, C#) every object belongs to a <em>class</em>
@@ -97,15 +102,16 @@ for(let k in me){
 </ul>
 </div>
 </section>
-<section class="slide level2">
+<section class="slide level1">
 
 <ul>
 <li>Java uses <em>class-based inheritance</em></li>
 <li>JS use <em>prototypal inheritance</em></li>
 </ul>
 </section>
-<section id="emulating-classes-in-js" class="slide level2">
-<h2>Emulating classes in JS</h2>
+<section class="slide level1">
+
+<h2 id="emulating-classes-in-js">Emulating classes in JS</h2>
 <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes">Simple syntax for constructors and prototype functions</a></p>
 <pre><code>class Pet{
    constructor(h, w, s){
@@ -121,23 +127,47 @@ let p = new Pet(0.76, 80, &quot;goat&quot;);
 p.draw();
 </code></pre>
 </section>
-<section id="why-classes" class="slide level2">
-<h2>Why classes?</h2>
-<p><span class="citation" data-cites="ul">@ul</span> - Reduces cut-and-paste: eases maintenance - Encourages <em>encapsulation</em>: hide the details so they can be changed easily - No global variables: no clashes - Make reusable components with classes - Reuse in the same project (multiple pets) or in different projects <span class="citation" data-cites="ulend">@ulend</span></p>
+<section class="slide level1">
+
+<h2 id="why-classes">Why classes?</h2>
+<div>
+<ul>
+<li class="fragment">Reduces cut-and-paste: eases maintenance</li>
+<li class="fragment">Encourages <em>encapsulation</em>: hide the details so they can be changed easily</li>
+<li class="fragment">No global variables: no clashes</li>
+<li class="fragment">Make reusable components with classes</li>
+<li class="fragment">Reuse in the same project (multiple pets) or in different projects</li>
+</ul>
+</div>
 </section>
-<section id="git-revisited-basic-branching" class="slide level2">
-<h2>git revisited: basic branching</h2>
-<p><span class="citation" data-cites="ul">@ul</span> - create a branch with <code>git branch iss52</code> - check it out with <code>git checkout iss52</code> - do some work, <code>add</code> and <code>commit</code> - go back to the main branch: <code>git checkout main</code> - merge your branch: <code>git merge iss52</code> - delete your branch: <code>git branch -d iss52</code> <span class="citation" data-cites="ulend">@ulend</span></p>
+<section class="slide level1">
+
+<h2 id="git-revisited-basic-branching">git revisited: basic branching</h2>
+<div>
+<ul>
+<li class="fragment">create a branch with <code>git branch iss52</code></li>
+<li class="fragment">check it out with <code>git checkout iss52</code></li>
+<li class="fragment">do some work, <code>add</code> and <code>commit</code></li>
+<li class="fragment">go back to the main branch: <code>git checkout main</code></li>
+<li class="fragment">merge your branch: <code>git merge iss52</code></li>
+<li class="fragment">delete your branch: <code>git branch -d iss52</code></li>
+</ul>
+</div>
 </section>
-<section id="what-is-the-point-of-all-that" class="slide level2">
-<h2>What is the point of all that?</h2>
+<section class="slide level1">
+
+<h2 id="what-is-the-point-of-all-that">What is the point of all that?</h2>
 <ul>
 <li>Different people can work on different features</li>
 <li>Before merging you can update with <code>git pull</code></li>
 <li>Automatically merges and identifies issues</li>
 <li>See also <a href="https://git-scm.com/book/en/v2/Git-Branching-Rebasing"><code>git rebase</code></a></li>
 </ul>
-</section></section>
+</section>
+<section id="next-time" class="slide level1">
+<h1>Next time</h1>
+<p>JavaScript and the DOM</p>
+</section>
     </div>
   </div>
 

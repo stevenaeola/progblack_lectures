@@ -1,4 +1,4 @@
-let pet = {height: 0.76, weight: 80, species: 'goat'};
+let pet = {height: 0.76, weight: 80, species: "goat"};
 
 let coatLength = pet.height;
 pet.weight += 5;

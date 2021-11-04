@@ -1,4 +1,4 @@
-# Javascript Objects {data-background-color=#7E317B}
+# JavaScript Objects {data-background-color=#7E317B}
 
 ---
 
@@ -21,7 +21,7 @@ Access properties like this
 ```
 let coatLength = pet.height;
 pet.weight += 5;
-pet["colour"] = "red"; # no declaration required
+pet["colour"] = "red"; // no declaration required
 
 ```
 
@@ -55,7 +55,7 @@ pet.draw();
 
 In a `for` loop over a list you can use `of`
 ```
-for (let x of [1,2,3]){console.log(x)}
+for (let x of [1,2,3]){console.log(x)};
 ```
 
 In a `for` loop over an object you can use `in` (gives keys)
@@ -128,26 +128,30 @@ p.draw();
 
 ## Why classes?
 
-@ul
+::: incremental
+
 - Reduces cut-and-paste: eases maintenance
 - Encourages *encapsulation*: hide the details so they can be changed easily
 - No global variables: no clashes
 - Make reusable components with classes
 - Reuse in the same project (multiple pets) or in different projects
-@ulend
+
+:::
 
 ---
 
 ## git revisited: basic branching
 
-@ul
+::: incremental
+
 - create a branch with `git branch iss52`
 - check it out with `git checkout iss52`
 - do some work, `add` and `commit`
 - go back to the main branch: `git checkout main`
 - merge your branch: `git merge iss52`
 - delete your branch: `git branch -d iss52`
-@ulend
+
+:::
 
 ---
 
@@ -158,3 +162,8 @@ p.draw();
 - Automatically merges and identifies issues
 - See also [`git rebase`](https://git-scm.com/book/en/v2/Git-Branching-Rebasing)
 
+---
+
+# Next time 
+
+JavaScript and the DOM

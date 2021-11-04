@@ -1,4 +1,4 @@
-# Javascript Objects 
+# JavaScript Objects 
 
 
 ## Collection of properties
@@ -19,7 +19,7 @@ Access properties like this
 ```
 let coatLength = pet.height;
 pet.weight += 5;
-pet["colour"] = "red"; # no declaration required
+pet["colour"] = "red"; // no declaration required
 
 ```
 
@@ -50,7 +50,7 @@ pet.draw();
 
 In a `for` loop over a list you can use `of`
 ```
-for (let x of [1,2,3])
+for (let x of [1,2,3]);
 ```
 
 In a `for` loop over an object you can use `in` (gives keys)
@@ -114,6 +114,7 @@ p.draw();
 
 ## Why classes?
 
+
 - Reduces cut-and-paste: eases maintenance
 - Encourages *encapsulation*: hide the details so they can be changed easily
 - No global variables: no clashes
@@ -121,7 +122,9 @@ p.draw();
 - Reuse in the same project (multiple pets) or in different projects
 
 
+
 ## git revisited: basic branching
+
 
 - create a branch with `git branch iss52`
 - check it out with `git checkout iss52`
@@ -131,6 +134,7 @@ p.draw();
 - delete your branch: `git branch -d iss52`
 
 
+
 ## What is the point of all that?
 
 - Different people can work on different features
@@ -138,3 +142,7 @@ p.draw();
 - Automatically merges and identifies issues
 - See also [`git rebase`](https://git-scm.com/book/en/v2/Git-Branching-Rebasing)
 
+
+# Next time 
+
+JavaScript and the DOM
