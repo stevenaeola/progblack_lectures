@@ -61,7 +61,7 @@
 </section>
 <section id="identifying-parts-of-the-page-getelementbyid" class="slide level2">
 <h2><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById">Identifying parts of the page: getElementById</a></h2>
-<p><code>var element = document.getElementById(id);</code></p>
+<p><code>const element = document.getElementById(id);</code></p>
 <div>
 <ul>
 <li class="fragment">In a browser you have access to the global <code>document</code> object</li>
@@ -89,7 +89,7 @@
 <ul>
 <li class="fragment">Browsers produce events as users interact with page</li>
 <li class="fragment">E.g. <code>click</code>, <code>keypress</code>, <code>focus</code>, <code>submit</code> see <a href="https://developer.mozilla.org/en-US/docs/Web/Events">list</a></li>
-<li class="fragment">Use <code>addEventListener</code> to attach a function to an element</li>
+<li class="fragment">Use <a href="https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener">addEventListener</a> to attach a function to an element/event</li>
 <li class="fragment">See <a href="https://github.com/stevenaeola/progblack_lectures/blob/main/js_dom/button2.html">button2.html</a></li>
 <li class="fragment">Better to separate JS and HTML in this way (MVC)</li>
 <li class="fragment">How would you get a message to appear when hovering over “primary” text?</li>

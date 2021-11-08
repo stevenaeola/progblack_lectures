@@ -33,7 +33,7 @@
 ## [Identifying parts of the page: getElementById](https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById)
 
 `
-var element = document.getElementById(id);
+const element = document.getElementById(id);
 `
 
 
@@ -59,7 +59,7 @@ var element = document.getElementById(id);
 
 - Browsers produce events as users interact with page
 - E.g. `click`, `keypress`, `focus`, `submit` see [list](https://developer.mozilla.org/en-US/docs/Web/Events)
-- Use `addEventListener` to attach a function to an element
+- Use [addEventListener](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener) to attach a function to an element/event
 - See [button2.html](https://github.com/stevenaeola/progblack_lectures/blob/main/js_dom/button2.html)
 - Better to separate JS and HTML in this way (MVC)
 - How would you get a message to appear when hovering over "primary" text?
