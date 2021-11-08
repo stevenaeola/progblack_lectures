@@ -40,6 +40,7 @@
 `
 var element = document.getElementById(id);
 `
+
 ::: incremental
 
 - In a browser you have access to the global `document` object

@@ -36,6 +36,7 @@
 var element = document.getElementById(id);
 `
 
+
 - In a browser you have access to the global `document` object
 - `id` attribute of HTML elements should be unique
 - Returns an [Element](https://developer.mozilla.org/en-US/docs/Web/API/Element)
