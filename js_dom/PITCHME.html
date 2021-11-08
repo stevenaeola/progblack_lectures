@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>PITCHME</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/simple.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+
+<section>
+<section id="javascript-and-the-dom" class="title-slide slide level1" data-background-color="#7E317B">
+<h1 data-background-color="#7E317B">JavaScript and the DOM</h1>
+
+</section>
+<section id="document-object-model-dom" class="slide level2">
+<h2>Document Object Model (DOM)</h2>
+<div>
+<ul>
+<li class="fragment">Internal representation of browser page</li>
+<li class="fragment">Read contents with JavaScript</li>
+<li class="fragment">Update contents to change page content</li>
+<li class="fragment">Historically problematic (so <a href="https://jquery.com/">jQuery</a>)</li>
+<li class="fragment">Better in ES6, now widespread</li>
+<li class="fragment"><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document">Documentation</a></li>
+</ul>
+</div>
+</section>
+<section id="event-handling-with-html" class="slide level2">
+<h2>Event handling with HTML</h2>
+<ul>
+<li>Add <code>onclick</code> attribute to an element</li>
+<li>JavaScript is executed (without separate tag)</li>
+<li>Note embedded single quotes</li>
+</ul>
+<pre><code>&lt;html&gt;
+&lt;button onclick=&quot;alert(&#39;Sing me a song&#39;);&quot;&gt;
+&lt;/html&gt;
+</code></pre>
+<ul>
+<li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Events">Events and the DOM</a></li>
+<li><a href="https://github.com/stevenaeola/progblack_lectures/blob/main/js_dom/button.html">button.html</a></li>
+</ul>
+</section>
+<section id="identifying-parts-of-the-page-getelementbyid" class="slide level2">
+<h2><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById">Identifying parts of the page: getElementById</a></h2>
+<p><code>var element = document.getElementById(id);</code> ::: incremental</p>
+<ul>
+<li>In a browser you have access to the global <code>document</code> object</li>
+<li><code>id</code> attribute of HTML elements should be unique</li>
+<li>Returns an <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element">Element</a></li>
+</ul>
+<p>:::</p>
+</section>
+<section id="identifying-parts-of-the-page-queryselector" class="slide level2">
+<h2><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector">Identifying parts of the page: querySelector</a></h2>
+<div>
+<ul>
+<li class="fragment">Select item with CSS selector</li>
+<li class="fragment">First matching element is selected</li>
+<li class="fragment">Can use <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll">querySelectorAll</a>
+<ul>
+<li class="fragment">Use <code>for</code> or <code>.foreach</code> to iterate</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="listening-for-events" class="slide level2">
+<h2>Listening for events</h2>
+<div>
+<ul>
+<li class="fragment">Browsers produce events as users interact with page</li>
+<li class="fragment">E.g. <code>click</code>, <code>keypress</code>, <code>focus</code>, <code>submit</code> see <a href="https://developer.mozilla.org/en-US/docs/Web/Events">list</a></li>
+<li class="fragment">Use <code>addEventListener</code> to attach a function to an element</li>
+<li class="fragment">See <a href="https://github.com/stevenaeola/progblack_lectures/blob/main/js_dom/button2.html">button2.html</a></li>
+<li class="fragment">Better to separate JS and HTML in this way (MVC)</li>
+<li class="fragment">How would you get a message to appear when hovering over “primary” text?</li>
+</ul>
+</div>
+</section>
+<section id="waiting-for-the-dom-to-be-loaded" class="slide level2">
+<h2>Waiting for the DOM to be loaded</h2>
+<ul>
+<li>JS often included in <code>&lt;head&gt;</code></li>
+<li>But DOM elements not defined when code is executed</li>
+<li><code>document.addEventListener("DOMContentLoaded",f)</code></li>
+<li>Handlers are often anonymous functions
+<ul>
+<li>function expression</li>
+<li>arrow function expression</li>
+</ul></li>
+<li>See <a href="https://github.com/stevenaeola/progblack_lectures/blob/main/js_dom/button3.html">button3.html</a></li>
+</ul>
+</section>
+<section id="manipulating-the-dom" class="slide level2">
+<h2>Manipulating the DOM</h2>
+<ul>
+<li>Change the content of an element with <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML">innerHTML</a> property</li>
+<li>Add/remove elements with <a href="https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/append">append</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/API/ChildNode/remove">remove</a></li>
+<li>Change attributes e.g. class, style with <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttribute">setAttribute</a></li>
+</ul>
+</section>
+<section id="summary" class="slide level2">
+<h2>Summary</h2>
+<div>
+<ul>
+<li class="fragment">Select parts of the page (DOM)</li>
+<li class="fragment">Update the page (DOM)</li>
+<li class="fragment">Attach actions (functions) to the page</li>
+<li class="fragment">Allows for dynamic pages e.g. <a href="https://web.dev/progressive-web-apps/">Progressive Web Apps</a></li>
+</ul>
+</div>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
