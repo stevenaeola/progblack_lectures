@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>PITCHME</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/simple.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+
+<section>
+<section id="http" class="title-slide slide level1" data-background-color="#7E317B">
+<h1 data-background-color="#7E317B">HTTP</h1>
+
+</section>
+<section id="possible-responses-from-a-web-request" class="slide level2">
+<h2>Possible responses from a web request</h2>
+<p>Responses include - A web page: some HTML</p>
+</section>
+<section id="sources-of-requests" class="slide level2">
+<h2>Sources of requests</h2>
+<p>How might http requests be generated? - URL typed in by user</p>
+</section>
+<section id="hypertext-transfer-protocol-http-basics" class="slide level2">
+<h2>Hypertext Transfer Protocol (HTTP) basics</h2>
+<div>
+<ul>
+<li class="fragment">Underlies many aspects of the web</li>
+<li class="fragment">Based around sockets (usually port 80 for web pages)</li>
+<li class="fragment">Fairly stable:
+<ul>
+<li class="fragment">HTTP 0.9 (1991)</li>
+<li class="fragment">HTTP 1.0 (1996)</li>
+<li class="fragment">HTTP 1.1 (1997)</li>
+<li class="fragment">HTTP 2.0 (2015/2020)</li>
+</ul></li>
+<li class="fragment">Commonly accepted extensions: cookies</li>
+</ul>
+</div>
+</section>
+<section id="http-more" class="slide level2">
+<h2>HTTP: more</h2>
+<ul>
+<li>HTTP 2 approved in 2015, including compression, push, pipelining and multiplexing</li>
+<li>For full details see <a href="https://tools.ietf.org/html/rfc7540" class="uri">https://tools.ietf.org/html/rfc7540</a></li>
+<li>For tutorial see <a href="http://www.jmarshall.com/easy/http/" class="uri">http://www.jmarshall.com/easy/http/</a></li>
+<li>Some knowledge important for web apps</li>
+<li>Not just for HTML, but general resource (uRl)</li>
+</ul>
+</section>
+<section id="overview" class="slide level2">
+<h2>Overview</h2>
+<ul>
+<li>Client/Server: (usually) no response without request</li>
+<li>Requests and responses have similar format:
+<ul>
+<li><strong>Request/Status Line</strong> including HTTP version and Status Codes for response</li>
+<li><strong>Headers</strong> including the host in HTTP 1.1, allowing for multiple sites on same IP</li>
+<li><strong>Blank Line</strong></li>
+</ul></li>
+<li>Can run manually using curl</li>
+<li>Default port number is 80 (443 for https)</li>
+</ul>
+</section>
+<section id="curl-requests" class="slide level2">
+<h2>curl requests</h2>
+<p>At a command prompt:</p>
+<pre><code>  curl -v google.coom
+  curl -v gooogle.com
+  curl -v google.com
+  curl -v www.google.com
+  curl -v https://community.dur.ac.uk/s.p.bradley/password/</code></pre>
+</section>
+<section id="request-types-include" class="slide level2">
+<h2>Request types include</h2>
+<ul>
+<li><strong>GET</strong> most common</li>
+<li><strong>POST</strong> for some forms</li>
+<li><strong>HEAD</strong> to check if a page exists</li>
+<li><strong>PUT</strong> rarely used outside web services</li>
+<li><strong>DELETE</strong> rarely used outside web services</li>
+</ul>
+<p>Headers can include cookie values</p>
+<p>URLs can include GET-encoded variables</p>
+</section>
+<section id="response" class="slide level2">
+<h2>Response</h2>
+<p>Response Codes</p>
+<ul>
+<li><strong>100-199</strong> Informational (e.g. continue). Client should respond</li>
+<li><strong>200-299</strong> Successful</li>
+<li><strong>300-399</strong> File has moved (permanently or temporarily)</li>
+<li><strong>400-499</strong> Client error (401 Unauthorised, 403 Forbidden, 404 Not Found)</li>
+<li><strong>500-599</strong> Server error</li>
+</ul>
+<p>Headers can include setting cookie values</p>
+</section>
+<section id="summary" class="slide level2">
+<h2>Summary</h2>
+<ul>
+<li>A web server responds to http requests, usually on port 80</li>
+<li>Request provides data in header and (possibly) body</li>
+<li>Response provides data in body and (possibly) header</li>
+</ul>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
