@@ -6,6 +6,7 @@
 ## Possible responses from a web request
 
 Responses include 
+
 - A web page: some HTML
 
 
@@ -13,6 +14,7 @@ Responses include
 ## Sources of requests
 
 How might http requests be generated?
+
 - URL typed in by user
 
 
