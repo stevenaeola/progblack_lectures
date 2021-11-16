@@ -119,7 +119,7 @@ Thanks to [SO user568109](http://stackoverflow.com/questions/14795145/how-the-si
 - In REST APIs they are often included in the URL directly (without question marks)
 - E.g. use [twitter API](https://developer.twitter.com/en/docs/api-reference-index)
 - We want to use routing to pick bits out of the URL for this in nodejs
-- There is a commonly used package called [express](http://expressjs.com/)
+- There is a commonly used package called [express](https://expressjs.com/)
 
 :::
 
