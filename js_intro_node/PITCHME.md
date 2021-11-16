@@ -217,7 +217,7 @@ app.listen(8090)
 
 ---
 
-# In Summary
+# In Summary {data-background-color=#A5C8D0}
 
   - nodejs provides server-side JavaScript
   - npm is the package manager
