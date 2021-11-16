@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>PITCHME</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/simple.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+
+<section id="introduction-to-nodejs" class="slide level1" data-background-color="#7E317B">
+<h1 data-background-color="#7E317B">Introduction to nodejs</h1>
+<figure>
+<img data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/220px-Node.js_logo.svg.png" style="width:25.0%" alt="nodejs logo" /><figcaption aria-hidden="true">nodejs logo</figcaption>
+</figure>
+</section>
+<section class="slide level1">
+
+<h2 id="what-and-why">What and Why?</h2>
+<div>
+<ul>
+<li class="fragment">Server-side scripting in JavaScript: alternative to php, asp, RoR</li>
+<li class="fragment">Single thread execution: non-blocking</li>
+<li class="fragment">Not designed for compute-heavy applications</li>
+<li class="fragment">Package manager npm claims to be largest ecosystem of open source libraries in the world.</li>
+</ul>
+</div>
+</section>
+<section class="slide level1">
+
+<h2 id="history">History</h2>
+<div>
+<ul>
+<li class="fragment">Developed from 2009</li>
+<li class="fragment">Based on Chrome V8 Javascript engine: compiles to machine code</li>
+<li class="fragment">Originally by Joyent, part of <a href="https://openjsf.org/">OpenJS foundation</a></li>
+<li class="fragment"><a href="https://flaviocopes.com/node-history/">Major fork in 2014</a> to io.js, since merged</li>
+<li class="fragment">MIT-style licence</li>
+<li class="fragment">Package manager <a href="https://www.npmjs.com/">npm</a> (and <a href="https://yarnpkg.com/">yarn</a>). See <a href="https://blog.npmjs.org/post/141577284765/kik-left-pad-and-npm">left pad incident</a></li>
+</ul>
+</div>
+</section>
+<section class="slide level1">
+
+<h2 id="hosting">Hosting</h2>
+<div>
+<ul>
+<li class="fragment">Cross-platform installation available for local hosting</li>
+<li class="fragment">Available on many PaaS installations e.g. openshift, IBM bluemix</li>
+<li class="fragment">Not as widely available as php but more than most others (my opinion/experience)</li>
+</ul>
+</div>
+</section>
+<section class="slide level1">
+
+<h2 id="hello-world">Hello world</h2>
+<pre><code>console.log(&quot;Hello world&quot;)</code></pre>
+<div>
+<ul>
+<li class="fragment">Save in hello.js</li>
+<li class="fragment">run with <code>node hello.js</code> or via VSC</li>
+<li class="fragment">uses terminal as console instead of browser tools</li>
+</ul>
+</div>
+</section>
+<section class="slide level1">
+
+<h2 id="web-server">Web server</h2>
+<pre><code>http = require(&quot;http&quot;)
+
+http.createServer(function (request, response) {
+  response.writeHead(200, {&#39;Content-Type&#39;: &#39;text/plain&#39;});
+  response.end(&#39;Hello World\n&#39;);
+}).listen(8080);
+
+console.log(&#39;Server running at http://127.0.0.1:8080/&#39;);</code></pre>
+</section>
+<section class="slide level1">
+
+<ul>
+<li>Use module http, based on CommonJS</li>
+<li>Module = file</li>
+<li><code>require</code> returns a js object that contains the module components</li>
+<li>modules are installed with npm if necessary (plus dependencies)</li>
+<li>node starts its own web server rather than running as an apache module (like php often is)</li>
+</ul>
+</section>
+<section class="slide level1">
+
+<h2 id="event-loop">Event loop</h2>
+<div>
+<ul>
+<li class="fragment">node runs on an event loop</li>
+<li class="fragment">callbacks are associated with events</li>
+<li class="fragment">programs should be non-blocking so that callbacks are provided for things like
+<ul>
+<li class="fragment">block of data arrives from file</li>
+<li class="fragment">block of data arrives from REST request</li>
+<li class="fragment">results data arrives from database request</li>
+</ul></li>
+<li class="fragment">callbacks can themselves trigger new events</li>
+<li class="fragment">next instruction is executed once all callbacks are complete</li>
+</ul>
+</div>
+</section>
+<section class="slide level1">
+
+<figure>
+<img data-src="https://i.stack.imgur.com/YCTgK.png" alt="nodejs threading model" /><figcaption aria-hidden="true">nodejs threading model</figcaption>
+</figure>
+<p>Thanks to <a href="http://stackoverflow.com/questions/14795145/how-the-single-threaded-non-blocking-io-model-works-in-node-js">SO user568109</a></p>
+</section>
+<section id="routing-requests" class="slide level1">
+<h1>Routing requests</h1>
+</section>
+<section class="slide level1">
+
+<h2 id="why-express">Why express?</h2>
+<div>
+<ul>
+<li class="fragment">Variables can be GET-encoded</li>
+<li class="fragment">In REST APIs they are often included in the URL directly (without question marks)</li>
+<li class="fragment">E.g. use <a href="https://developer.twitter.com/en/docs/api-reference-index">twitter API</a></li>
+<li class="fragment">We want to use routing to pick bits out of the URL for this in nodejs</li>
+<li class="fragment">There is a commonly used package called <a href="http://expressjs.com/">express</a></li>
+</ul>
+</div>
+</section>
+<section id="npm-packages" class="slide level1">
+<h1>npm packages</h1>
+<ul>
+<li>npm is your friend</li>
+<li>Dependencies are stored in package.json</li>
+<li>Uses <a href="http://semver.org">semantic versioning</a>
+<ul>
+<li>Code should have public API by version</li>
+<li>Version is X.Y.Z</li>
+<li>X = major version, Y = minor version, Z = patch</li>
+<li>Never change code within version once released</li>
+</ul></li>
+</ul>
+</section>
+<section class="slide level1">
+
+<ul>
+<li>version semantics
+<ul>
+<li>X = 0 for pre-release versions</li>
+<li>Increase Z for bug-fixes, no new functionality</li>
+<li>Increase Y, set Z=0 for backwards-compatibile new functionality</li>
+<li>Increase X, set Y=Z=0 for backwards-incompatible new functionality</li>
+</ul></li>
+<li>In package.json can use tilde to match minor version, caret to match major version etc</li>
+</ul>
+</section>
+<section id="install-express" class="slide level1">
+<h1>Install express</h1>
+<pre><code>npm init</code></pre>
+<p>creates package.json</p>
+<pre><code>npm install express</code></pre>
+<p>installs express package and its dependencies</p>
+<pre><code>npm install express --save</code></pre>
+<p>installs and puts dependency in package.json</p>
+</section>
+<section id="express-routing" class="slide level1">
+<h1>Express routing</h1>
+<pre><code>var express = require(&#39;express&#39;)
+var app = express()
+
+app.get(&#39;/&#39;, function(req, resp){
+  resp.send(&#39;Hello world&#39;)
+})
+
+app.listen(8090)</code></pre>
+<p>This just starts an express app handling GET requests via port 8090</p>
+</section>
+<section class="slide level1">
+
+<pre><code>var express = require(&#39;express&#39;)
+var app = express()
+
+app.get(&#39;/random/:max&#39;, function(req, resp){
+  max = parseInt(req.params.max)
+  rand = Math.floor(Math.random()*max) +1
+  console.log(&#39;Max via url is &#39; + max + &#39; rand is &#39; + rand)
+  resp.send(&#39;&#39; + rand)
+})
+
+app.get(&#39;/r&#39;, function(req, resp){
+  max = parseInt(req.query.max)
+  rand = Math.floor(Math.random()*max) +1
+  console.log(&#39;Max via query is &#39; + max + &#39; rand is &#39; + rand)
+  resp.send(&#39;&#39; + rand)
+})
+
+app.listen(8090)</code></pre>
+<div>
+<ul>
+<li class="fragment">Adds two separate routes</li>
+<li class="fragment">Extract max value in two different ways</li>
+<li class="fragment">Via value in URL (:max)</li>
+<li class="fragment">Via value in GET-encoded variable</li>
+</ul>
+</div>
+</section>
+<section id="in-summary" class="slide level1">
+<h1>In Summary</h1>
+<ul>
+<li>nodejs provides server-side JavaScript</li>
+<li>npm is the package manager</li>
+<li>servers can run locally or remotely</li>
+<li>express is a very popular package for routing requests</li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
