@@ -1,6 +1,6 @@
 # Introduction to nodejs {data-background-color=#7E317B}
 
-![nodejs logo](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/220px-Node.js_logo.svg.png){width=40%}
+![.](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/220px-Node.js_logo.svg.png){width=40%}
 
 ---
 
@@ -11,7 +11,7 @@
   - Server-side scripting in JavaScript: alternative to php, asp, RoR
   - Single thread execution: non-blocking
   - Not designed for compute-heavy applications
-  - Package manager npm claims to be largest ecosystem of open source libraries in the world.
+  - Package manager npm claims to be largest ecosystem of open source libraries in the world
 
 :::
 
