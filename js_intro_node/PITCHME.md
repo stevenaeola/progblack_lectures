@@ -217,6 +217,20 @@ app.listen(8090)
 
 ---
 
+## Serving client  content through node
+
+- Add this line to server (middleware)
+```
+app.use(express.static('client'));
+```
+- Put all static content in `client` directory
+- E.g. html, client JS, CSS, images, sounds
+- Access via server (without `client` in url)
+```
+127.0.0.1:8090/index.html
+```
+
+
 # In Summary {data-background-color=#A5C8D0}
 
   - nodejs provides server-side JavaScript
