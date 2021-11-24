@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>PITCHME</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/simple.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+
+<section>
+<section id="javascript-client-server-interaction" class="title-slide slide level1" data-background-color="#7E317B">
+<h1 data-background-color="#7E317B">JavaScript Client-Server Interaction</h1>
+
+</section>
+<section id="summary" class="slide level2">
+<h2>Summary</h2>
+<div>
+<ul>
+<li class="fragment">Asynchronous JavaScript (AJAX)</li>
+<li class="fragment">Fetch API</li>
+<li class="fragment">Cross-Origin Resource Sharing</li>
+<li class="fragment">Promises</li>
+<li class="fragment">async and await</li>
+<li class="fragment">Exceptions</li>
+</ul>
+</div>
+</section>
+<section id="asynchronous-javascript-and-xml-ajax" class="slide level2">
+<h2>Asynchronous JavaScript and XML (AJAX)</h2>
+<div>
+<ul>
+<li class="fragment">Use to update part of an HTML page with the result of a request</li>
+<li class="fragment">Client-side JavaScript sends request</li>
+<li class="fragment">Page needs to work while waiting</li>
+<li class="fragment">An event is triggered when response arrives</li>
+<li class="fragment">Content of response is used to update page content</li>
+<li class="fragment">‘Single page app’</li>
+<li class="fragment">Mostly use JSON instead of XML these days</li>
+</ul>
+</div>
+</section>
+<section id="fetch-api" class="slide level2">
+<h2>Fetch API</h2>
+<div>
+<ul>
+<li class="fragment">Before ES6 most people used <a href="http://api.jquery.com/category/ajax/">jQuery for AJAX</a></li>
+<li class="fragment">Now the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API">Fetch API</a> does this natively</li>
+<li class="fragment">Polyfill https://github.com/github/fetch works on any browser</li>
+</ul>
+</div>
+</section>
+<section id="fetch-example-html" class="slide level2">
+<h2>Fetch example HTML</h2>
+<pre><code>&lt;body&gt;
+  &lt;div id=&quot;content&quot;&gt;&lt;/div&gt;
+  &lt;button id=&quot;get&quot;&gt;Get instruments&lt;/button&gt;
+  &lt;script src=&quot;index.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;</code></pre>
+</section>
+<section id="fetch-client-js" class="slide level2">
+<h2>Fetch client JS</h2>
+<pre><code>window.addEventListener(&#39;click&#39;, function(event){
+  fetch(&#39;http://127.0.0.1:8090/list&#39;)
+   .then(response =&gt; response.text())
+   .then(body =&gt;
+      document.getElementById(&#39;content&#39;).innerHTML=body)
+});
+</code></pre>
+<p>Note use of =&gt; for anonymous function declaration</p>
+</section>
+<section id="fetch-server-js" class="slide level2">
+<h2>Fetch server JS</h2>
+<pre><code>const express = require(&#39;express&#39;);
+const app = express();
+
+let instruments = [ &#39;piano&#39;, &#39;concertina&#39;, &#39;double bass&#39;];
+
+app.get(&#39;/list&#39;, function (req, resp){
+    resp.send(instruments);
+});
+
+app.listen(8090);
+</code></pre>
+</section>
+<section id="problem" class="slide level2">
+<h2>Problem</h2>
+<p>This does not work: browser console says</p>
+<blockquote>
+<p>index.html:1 Access to fetch at ‘http://127.0.0.1:8090/list’ from origin ‘null’ has been blocked by CORS policy: No ‘Access-Control-Allow-Origin’ header is present on the requested resource. If an opaque response serves your needs, set the request’s mode to ‘no-cors’ to fetch the resource with CORS disabled.</p>
+</blockquote>
+</section>
+<section id="same-origin-policy" class="slide level2">
+<h2><a href="https://en.wikipedia.org/wiki/Same-origin_policy">Same-origin Policy</a></h2>
+<ul>
+<li>Security feature of browsers</li>
+<li>Asynchronous requests only to source of page</li>
+<li>Cross-Origin Resource Sharing (CORS) can get around it</li>
+<li>Or, better, serve from the same place</li>
+</ul>
+</section>
+<section id="serving-client-content-through-node" class="slide level2">
+<h2>Serving client content through node</h2>
+<ul>
+<li>Add this line to server (middleware)</li>
+</ul>
+<pre><code>app.use(express.static(&#39;client&#39;));</code></pre>
+<ul>
+<li>Put all static content in <code>client</code> directory</li>
+<li>E.g. html, client JS, CSS, images, sounds</li>
+<li>Access via server (without <code>client</code> in url)</li>
+</ul>
+<pre><code>127.0.0.1:8090/index.html</code></pre>
+</section>
+<section id="promises" class="slide level2">
+<h2>Promises</h2>
+<ul>
+<li>Fetch uses <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises">promises</a></li>
+<li>Promises should make it easier to attach callbacks/handlers</li>
+<li>Include success and failure callbacks</li>
+<li>Add (chains of) success callbacks with <code>.then</code></li>
+<li>Add failure callback with <code>.catch</code></li>
+<li>N.B. a 404 is still counted as success</li>
+</ul>
+</section>
+<section id="catch-example" class="slide level2">
+<h2>catch example</h2>
+<p>Add this to handle any errors from <code>fetch</code> handler chain</p>
+<pre><code>.catch( (error) =&gt; alert(error))</code></pre>
+<p>If you want to deal with 404 errors you will have to look at <code>response.ok</code></p>
+</section>
+<section id="async-and-await" class="slide level2">
+<h2>async and await</h2>
+<ul>
+<li>New in ES2017</li>
+<li>Provide ‘syntactic sugar’ for promises <code>.catch</code></li>
+<li>Use <code>async</code> keyword before <code>function</code> keyword</li>
+<li>use <code>await</code> keyword in execution</li>
+</ul>
+</section>
+<section id="async-example" class="slide level2">
+<h2>async example</h2>
+<pre><code>window.addEventListener(&#39;click&#39;, async function(event){
+  let response = await fetch(&#39;http://127.0.0.1:809/list&#39;);
+  let body = await response.text();
+  document.getElementById(&#39;content&#39;).innerHTML=body
+});</code></pre>
+</section>
+<section id="exceptions" class="slide level2">
+<h2>Exceptions</h2>
+<p>What happens if things go wrong?</p>
+<pre><code>window.addEventListener(&#39;click&#39;, async function(event){
+  try{
+    let response = await fetch(&#39;http://127.0.0.1:809/list&#39;);
+    let body = await response.text();
+    document.getElementById(&#39;content&#39;).innerHTML=body;
+  } catch(e) {
+    alert(e);
+  }
+});</code></pre>
+<p>N.B. <code>catch</code> instead of Python <code>except</code></p>
+</section>
+<section id="how-to-do-the-assignment" class="slide level2">
+<h2>How to do the assignment</h2>
+<ul>
+<li>Design HTML</li>
+<li>Design web service</li>
+<li>Join with Fetch</li>
+</ul>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
