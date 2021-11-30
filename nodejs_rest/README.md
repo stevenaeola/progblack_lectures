@@ -29,7 +29,7 @@
 
 ## REST parameters
 
-- For GET methods we have [already talked about this](../js_intro_node)
+- For GET methods we have [already talked about this](https://github.com/stevenaeola/progblack_lectures/blob/main/js_intro_node/README.md)
 - For POST methods you may need to [configure body parser](https://github.com/stevenaeola/proglabs_js/tree/master/node_routing)
 
 ```
