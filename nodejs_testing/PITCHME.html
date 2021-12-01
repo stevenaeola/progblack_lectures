@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>PITCHME</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/simple.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+
+<section>
+<section id="testing-nodejs-rest" class="title-slide slide level1" data-background-color="#7E317B">
+<h1 data-background-color="#7E317B">Testing nodejs REST</h1>
+
+</section>
+<section id="why-testing" class="slide level2">
+<h2>Why testing?</h2>
+<div>
+<ul>
+<li class="fragment">Does not prove the absence of bugs</li>
+<li class="fragment">Can help identify existing bugs</li>
+<li class="fragment">Can avoid introducing new bugs</li>
+<li class="fragment">Repeated testing necessary in agile development</li>
+<li class="fragment">Automated as far as possible</li>
+<li class="fragment">It’s in the assignment …</li>
+</ul>
+</div>
+</section>
+<section id="basic-approaches" class="slide level2">
+<h2>Basic Approaches</h2>
+<ul>
+<li>Using browser (manual)</li>
+<li>Using Postman (partly automatic)</li>
+<li>Using test scripts (automatic)</li>
+</ul>
+</section>
+<section id="browser-based-testing" class="slide level2">
+<h2>Browser-based testing</h2>
+<ul>
+<li>GET is easy: just type in URL</li>
+<li>POST is slightly harder: build HTML form</li>
+<li>Other http methods more difficult</li>
+</ul>
+</section>
+<section id="postman" class="slide level2">
+<h2>Postman</h2>
+<ul>
+<li>Originally a chrome plugin</li>
+<li>Now a <a href="https://www.postman.com/">web application</a> with Desktop Agent</li>
+<li>Define a set of requests in a collection</li>
+<li>Choose GET or POST (or other)</li>
+<li>Include body parameters for POST</li>
+<li>Use raw/JSON for JSON</li>
+<li>Can specify expected responses</li>
+</ul>
+</section>
+<section id="test-scripts" class="slide level2">
+<h2>Test scripts</h2>
+<ul>
+<li>There are very many JavaScript unit testing frameworks (mocha, jasmine, ava)</li>
+<li>I recommend using <a href="https://jestjs.io/">Jest</a></li>
+<li>Read a <a href="hhttps://medium.com/welldone-software/an-overview-of-javascript-testing-7ce7298b9870">2020 review</a></li>
+<li>Read about <a href="https://blog.logrocket.com/most-in-demand-javascript-testing-tools-in-2020/">tools in demand in 2020</a>
+<ul>
+<li>Developed from <a href="https://2019.stateofjs.com/">StateofJS</a></li>
+</ul></li>
+<li><code>npm install --save-dev jest</code></li>
+<li>Tests are js programs (as in jUnit)</li>
+<li>Put tests in test directory or name .test.js</li>
+</ul>
+</section>
+<section id="running-tests" class="slide level2">
+<h2>Running tests</h2>
+<ul>
+<li>Get it going first</li>
+<li>Use nodemon to auto-restart server</li>
+<li>Add test script to your package.json</li>
+<li>run test with npm test</li>
+<li>see some <a href="https://github.com/stevenaeola/gitpitch/blob/master/prog/nodejs_testing/app.test.js">example tests for thing</a></li>
+</ul>
+</section>
+<section id="separate-out-app-from-server" class="slide level2">
+<h2>Separate out app from server</h2>
+<p>So that running tests does not launch the server</p>
+<p>e.g. app.js file</p>
+<pre><code>const express = require(&#39;express&#39;);
+const app = express();
+// ... add routes
+module.exports = app;
+</code></pre>
+<p>e.g. server.js file</p>
+<pre><code>const app = require(&#39;./app&#39;);
+app.listen(8090);
+</code></pre>
+</section>
+<section id="test-coverage" class="slide level2">
+<h2>Test coverage</h2>
+<ul>
+<li>In testing we try to improve quality</li>
+<li>Coverage measures how much functionality has been tested</li>
+<li>Could measure this in terms of
+<ul>
+<li>the space of possible inputs (black box)</li>
+<li>the code that has been executed (white box)</li>
+</ul></li>
+<li>Unit testing combines the two</li>
+<li>Need to think about valid and invalid inputs</li>
+</ul>
+</section>
+<section id="mocking" class="slide level2">
+<h2>Mocking</h2>
+<div>
+<ul>
+<li class="fragment">You want to avoid accessing live systems during tests</li>
+<li class="fragment">Reading may be brittle</li>
+<li class="fragment">Writing may be dangerous</li>
+<li class="fragment">Real system may not be developed yet</li>
+<li class="fragment">Replace access to live data using <a href="https://en.wikipedia.org/wiki/Mock_object">mocking</a></li>
+<li class="fragment">There are <a href="https://jestjs.io/docs/en/mock-functions.html">specific jest functions for this</a></li>
+<li class="fragment">If you intend to use a remote web service you should use mocking</li>
+<li class="fragment">Same for a remote database (e.g. Firebase)</li>
+</ul>
+</div>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
