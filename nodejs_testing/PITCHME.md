@@ -36,7 +36,7 @@
 ## Postman
 
 - Originally a chrome plugin
-- Now a [web application](https://www.postman.com/) with Desktop Agent
+- Now a [dekstop application](https://www.postman.com/)
 - Define a set of requests in a collection
 - Choose GET or POST (or other)
 - Include body parameters for POST
@@ -49,9 +49,8 @@
 
 - There are very many JavaScript unit testing frameworks (mocha, jasmine, ava)
 - I recommend using [Jest](https://jestjs.io/)
-- Read a [2020 review](hhttps://medium.com/welldone-software/an-overview-of-javascript-testing-7ce7298b9870)
-- Read about [tools in demand in 2020](https://blog.logrocket.com/most-in-demand-javascript-testing-tools-in-2020/)
-  - Developed from [StateofJS](https://2019.stateofjs.com/)
+- Read a [recent review](https://medium.com/welldone-software/an-overview-of-javascript-testing-7ce7298b9870)
+- Also see [StateofJS](https://2020.stateofjs.com/en-US/conclusion/)
 - `npm install --save-dev jest`
 - Tests are js programs (as in jUnit)
 - Put tests in test directory or name .test.js
