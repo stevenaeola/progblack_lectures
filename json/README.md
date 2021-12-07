@@ -33,7 +33,9 @@
 
 Add middleware for JSON body parsing
 
-```app.use(express.json());```
+```
+app.use(express.json());
+```
 
 Then access `req.body` within a `.post` route
 
