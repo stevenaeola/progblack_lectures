@@ -4,12 +4,14 @@
 
 ## Summary
 
+
 - Human- and machine- readable and writable
 - Used for storage and transmission of data
 - Language agnostic
 - Alternative to XML in AJAX
 - JavaScript methods `JSON.stringify` and `JSON.parse`
 - Equivalents in [python](https://docs.python.org/3/library/json.html), [Java](https://github.com/FasterXML/jackson) etc
+
 
 
 ## What does it look like?
@@ -54,5 +56,6 @@ fs.writeFileSync('./file.json', data);
 
 - Could load a file and then use `JSON.parse`
 - Or simply
+
 ```const jsonContent = require("./file.json");```
 
