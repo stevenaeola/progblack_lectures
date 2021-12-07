@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>PITCHME</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/simple.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+
+<section>
+<section id="json-javascript-object-notation" class="title-slide slide level1" data-background-color="#7E317B">
+<h1 data-background-color="#7E317B">JSON: JavaScript Object Notation</h1>
+
+</section>
+<section id="summary" class="slide level2">
+<h2>Summary</h2>
+<ul>
+<li>Human- and machine- readable and writable</li>
+<li>Used for storage and transmission of data</li>
+<li>Language agnostic</li>
+<li>Alternative to XML in AJAX</li>
+<li>JavaScript methods <code>JSON.stringify</code> and <code>JSON.parse</code></li>
+<li>Equivalents in <a href="https://docs.python.org/3/library/json.html">python</a>, <a href="https://github.com/FasterXML/jackson">Java</a> etc</li>
+</ul>
+</section>
+<section id="what-does-it-look-like" class="slide level2">
+<h2>What does it look like?</h2>
+<ul>
+<li>Plain text</li>
+<li>Encodes objects, lists, strings, numbers, boolean, null</li>
+<li>Does not encode functions</li>
+<li>Read the <a href="https://www.json.org/json-en.html">language summary</a></li>
+<li>Subset of object literal notation in JavaScript
+<ul>
+<li>Object keys need to be in quotes</li>
+</ul></li>
+</ul>
+</section>
+<section id="sending-json-with-fetch" class="slide level2">
+<h2>Sending JSON with fetch</h2>
+<ul>
+<li>Set method to <code>post</code></li>
+<li>Set <code>'Content-Type': 'application/json'</code></li>
+<li>Use <code>JSON.stringify</code> to encode body</li>
+<li>See <a href="./postStuff.js">postStuff example</a></li>
+</ul>
+</section>
+<section id="receiving-json-with-express" class="slide level2">
+<h2>Receiving JSON with express</h2>
+<p>Add middleware for JSON body parsing</p>
+<pre class="app.use(express.json());```"><code>
+Then access `req.body` within a `.post` route
+
+## Writing JSON to a file
+
+- Convert object to JSON with `JSON.stringify`
+- Use `writeFileSync` from the `fs` module
+</code></pre>
+<p>const fs = require(‘fs’); let data = JSON.stringify([1, 2, 3]); fs.writeFileSync(‘./file.json’, data); ```</p>
+</section>
+<section id="loading-json-from-a-file" class="slide level2">
+<h2>Loading JSON from a file</h2>
+<ul>
+<li>Could load a file and then use <code>JSON.parse</code></li>
+<li>Or simply <code>const jsonContent = require("./file.json");</code></li>
+</ul>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
