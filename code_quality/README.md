@@ -7,13 +7,15 @@
 - Getting the most out of VSCode
 - Next term
 
-## ESLint
+
+## [ESLint](https://eslint.org/)
 
 - Check coding standards are applied
 - Install with `npm install -g eslint`
 - Use a particular set of rules e.g. standard (need to install)
 - Customise (see coursework specification)
 - Run with `eslint file.js`
+- Autofix with `eslint --fix file.js`
 - Beware [bikeshedding](https://exceptionnotfound.net/bikeshedding-the-daily-software-anti-pattern/) over standards
 
 
