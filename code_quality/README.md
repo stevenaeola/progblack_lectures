@@ -35,6 +35,7 @@ module.exports = {
 
 ## ESLint tooling
 
+- Add as a pretest script (assignment)
 - Consider [adding a git pre-commit hook](https://levelup.gitconnected.com/how-to-run-eslint-using-pre-commit-hook-25984fbce17e)
 - Install the [ESLint plugin for VSCode](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint):
   - identify and auto-fix 
