@@ -13,7 +13,8 @@
 ## [ESLint](https://eslint.org/)
 
 - Check coding standards are applied
-- Install with `npm install -g eslint`
+- Install with `npm install eslint`
+- Configure in your project with `eslint --init`
 - Use a particular set of rules e.g. standard (need to install)
 - Customise (see coursework specification)
 - Run with `eslint file.js`
