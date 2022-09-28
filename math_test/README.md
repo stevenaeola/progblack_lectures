@@ -10,4 +10,4 @@
 - Language agnostic
 
 
-$$\sum_ = 1$$
+$$ \sum_ = 1$$
