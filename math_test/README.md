@@ -10,4 +10,4 @@
 - Language agnostic
 
 
-$$x = -b \pm b^2-4ac/2a$$
+$$S_n = \sum_S-i$$
