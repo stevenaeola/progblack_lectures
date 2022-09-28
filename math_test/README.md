@@ -10,4 +10,4 @@
 - Language agnostic
 
 
-$$S_n = \sum_S-i$$
+$$S_n = \sum_ S_i$$
