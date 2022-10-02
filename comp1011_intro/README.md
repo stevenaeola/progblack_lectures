@@ -15,6 +15,7 @@ Introduction to the module
 # What tools do developers use (poll)? 
 
 [...](https://www.jetbrains.com/lp/devecosystem-2021/)
+[...](https://survey.stackoverflow.co/2022/)
 
 
 ## We will be learning
@@ -54,17 +55,17 @@ Introduction to the module
 
 ## Self-evaluation
 
-- Questionnaire on LU (Module information)
+- Questionnaire (Module information)
 - Your score is only for your information
 - I will publish the score distributions to help you choose
 
 
 ## Teaching plan
 
-- Two lectures a week f2f and zoom term 1 (Tuesday 10, Thursday 10)
+- Two lectures a week f2f (Monday 10, Weds 10)
 - One practical a week term 1 (see allocation on MyTimetable)
-- Office hours 11-12 Tueday by zoom (see contacts on LU)
-- Term 2 drop-in tutorials: no lectures or practicals
+- Office hours 11-12 Friday in person or by zoom (see contacts on LU to book a slot)
+- Term 2 tutorials: no lectures or practicals
 
 
 ## Examples
@@ -72,7 +73,7 @@ Introduction to the module
 
 - This is a practically motivated course
 - What should we do as an example?
-- Previously have done cheese, memes, hats, Sue Black
+- Previously have done cheese, memes, hats, Sue Black, goats
 - Come up with a suggestion in a group of three
 - Then we will have a vote 
 
