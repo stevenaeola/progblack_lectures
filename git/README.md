@@ -78,7 +78,7 @@ Recommend you use github with education: free private repositories
 
 ## Key commands in git
 
-Working on the command line
+Working on the command line (like [84% of developers](https://survey.stackoverflow.co/2022/#version-control-vc-interaction))
 ```
 git init
 git add
@@ -134,7 +134,7 @@ or
 git clone
 ```
 
-Some sites called the default branch `master` instead of `main`
+The default branch used to be `master` instead of `main`. See [SO article on changing](https://stackoverflow.com/questions/67543278/git-how-to-change-default-branch-for-everything-i-do)
 
 
 ## See also
