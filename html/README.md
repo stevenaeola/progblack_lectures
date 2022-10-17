@@ -29,6 +29,7 @@ HyperText Markup Language
   - five minutes
 * One person to create a text file with them in
   - one per line
+  - just the name of the tag (no angle brackets)
 
 
 ## Putting them together
@@ -60,14 +61,14 @@ HyperText Markup Language
 - e.g. [Bootstrap](https://getbootstrap.com/) and [alternatives](https://classpert.com/blog/top-bootstrap-alternatives)
 
 
-## Goats
+## Pasta
 
-To sort the sheep from the goats we can
+To sieve out the stuff we don't want we can
 
 - make our page HTML5 compliant
 - include it in a bootstrap template
 
-Follow progress at <https://github.com/stevenaeola/goats>
+Follow progress at <https://github.com/stevenaeola/progblack_2223>
 
 
 
