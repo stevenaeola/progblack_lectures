@@ -53,6 +53,7 @@ I use [node-red](https://nodered.org/) for [music](https://flows.nodered.org/nod
 :::
 
 ---
+
 ## Let's do it: set up
 
 - One of you operate the keyboard and share screen
