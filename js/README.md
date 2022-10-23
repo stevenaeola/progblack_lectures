@@ -8,7 +8,7 @@
 - Not Java
 - It has some good parts
 - Standardised by Ecma (once ECMA) as EcmaScript
-- Current version is [ES12 (2021)](https://backbencher.dev/articles/javascript-es2021-new-features)
+- Current version is [ES12 (2022)](https://dev.to/brayanarrieta/new-javascript-features-ecmascript-2022-with-examples-4nhg)
 - Most recent widely-supported version is ES6 (2015)
 - [Support varies](http://kangax.github.io/compat-table/es6/)
 
@@ -78,7 +78,7 @@ Can run in browser as file, not just with http
 - Content Delivery Networks (CDN)
 ```HTML
 <script
- src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js">
+ src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js">
 </script>
 ```
 
