@@ -123,26 +123,6 @@ p.draw();
 
 
 
-## git revisited: basic branching
-
-
-- create a branch with `git branch iss52`
-- check it out with `git checkout iss52`
-- do some work, `add` and `commit`
-- go back to the main branch: `git checkout main`
-- merge your branch: `git merge iss52`
-- delete your branch: `git branch -d iss52`
-
-
-
-## What is the point of all that?
-
-- Different people can work on different features
-- Before merging you can update with `git pull`
-- Automatically merges and identifies issues
-- See also [`git rebase`](https://git-scm.com/book/en/v2/Git-Branching-Rebasing)
-
-
 # Next time 
 
 JavaScript and the DOM
