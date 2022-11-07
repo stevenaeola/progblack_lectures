@@ -83,6 +83,7 @@ const element = document.getElementById(id);
 - Create a new element with [createElement](https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement)
 - Add/remove elements with [append](https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/append) and [remove](https://developer.mozilla.org/en-US/docs/Web/API/ChildNode/remove)
 - Change attributes e.g. class, style with [setAttribute](https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttribute)
+- Update classes by add/remove on [classList](https://developer.mozilla.org/en-US/docs/Web/API/Element/classList)
 
 
 ## Summary
