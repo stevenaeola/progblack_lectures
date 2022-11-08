@@ -10,3 +10,5 @@
 - A cookie value (in headers)
 - An error
 - A combination of the above
+
+Response to request may be used to update or replace some or all of a web page.

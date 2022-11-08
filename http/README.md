@@ -7,20 +7,9 @@
 
 Responses include 
 
-- A web page: some HTML
-- URL typed in by user
-- A plain text file
-- An image file (jpeg, gif, png)
-- An executable (.exe, .msi)
-- A document (pdf, word)
-- Some data (XML, JSON)
-- A CSS file
-- A JavaScript program
-- A flash movie
-- A redirection (in headers)
-- A cookie value (in headers)
-- An error
-- A combination of the above
+- An HTML document
+
+
 <http://pollev.com/stevenaeola>
 
 
@@ -30,15 +19,7 @@ Responses include
 How might http requests be generated?
 
 - Hyperlink followed
-- Form submitted
-- Clicking in an image map
-- Image included in source file
-- CSS included in source file
-- Frameset or iframe in HTML source (can be recursive)
-- Following a redirection (including 301 error)
-- JavaScript execution (triggered by mouseover etc)
-- Plugin execution e.g. pdf
-- From a server (e.g. curl, robot, web service request)
+- etc
 
 Response to request may be used to update or replace some or all of a web page.
 
@@ -88,7 +69,7 @@ At a command prompt:
   curl -v gooogle.com
   curl -v google.com
   curl -v www.google.com
-  curl -v https://community.dur.ac.uk/s.p.bradley/password/
+  curl -v https://timetable.dur.ac.uk/
 ```
  
 
