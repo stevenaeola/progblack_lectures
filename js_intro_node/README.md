@@ -29,7 +29,7 @@
 
 
 - Cross-platform installation available for local hosting
-- Available on many PaaS installations e.g. openshift, IBM bluemix
+- Available on many PaaS installations e.g. AWS, AZure, openshift, IBM bluemix
 - Not as widely available as php but more than most others (my opinion/experience)
 
 
