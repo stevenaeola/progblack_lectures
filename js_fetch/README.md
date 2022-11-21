@@ -170,4 +170,12 @@ window.addEventListener('click', async function(event){
 N.B. `catch` instead of Python `except`
 
 
+## Summary
+
+- Asynchronous JavaScript (AJAX)
+- Fetch API
+- Cross-Origin Resource Sharing
+- Promises
+- async and await
+- Exceptions
 
