@@ -10,12 +10,20 @@
   <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
   <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
   <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
   <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/simple.css" id="theme">
@@ -26,8 +34,10 @@
 
 
 <section>
-<section id="javascript-client-server-interaction" class="title-slide slide level1" data-background-color="#7E317B">
-<h1 data-background-color="#7E317B">JavaScript Client-Server Interaction</h1>
+<section id="javascript-client-server-interaction"
+class="title-slide slide level1" data-background-color="#7E317B">
+<h1 data-background-color="#7E317B">JavaScript Client-Server
+Interaction</h1>
 
 </section>
 <section id="summary" class="slide level2">
@@ -47,11 +57,13 @@
 <h2>Asynchronous JavaScript and XML (AJAX)</h2>
 <div>
 <ul>
-<li class="fragment">Use to update part of an HTML page with the result of a request</li>
+<li class="fragment">Use to update part of an HTML page with the result
+of a request</li>
 <li class="fragment">Client-side JavaScript sends request</li>
 <li class="fragment">Page needs to work while waiting</li>
 <li class="fragment">An event is triggered when response arrives</li>
-<li class="fragment">Content of response is used to update page content</li>
+<li class="fragment">Content of response is used to update page
+content</li>
 <li class="fragment">‘Single page app’</li>
 <li class="fragment">Mostly use JSON instead of XML these days</li>
 </ul>
@@ -61,9 +73,13 @@
 <h2>Fetch API</h2>
 <div>
 <ul>
-<li class="fragment">Before ES6 most people used <a href="http://api.jquery.com/category/ajax/">jQuery for AJAX</a></li>
-<li class="fragment">Now the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API">Fetch API</a> does this natively</li>
-<li class="fragment">Polyfill https://github.com/github/fetch works on any browser</li>
+<li class="fragment">Before ES6 most people used <a
+href="http://api.jquery.com/category/ajax/">jQuery for AJAX</a></li>
+<li class="fragment">Now the <a
+href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API">Fetch
+API</a> does this natively</li>
+<li class="fragment">Polyfill https://github.com/github/fetch works on
+any browser</li>
 </ul>
 </div>
 </section>
@@ -104,11 +120,17 @@ app.listen(8090);
 <h2>Problem</h2>
 <p>This does not work: browser console says</p>
 <blockquote>
-<p>index.html:1 Access to fetch at ‘http://127.0.0.1:8090/list’ from origin ‘null’ has been blocked by CORS policy: No ‘Access-Control-Allow-Origin’ header is present on the requested resource. If an opaque response serves your needs, set the request’s mode to ‘no-cors’ to fetch the resource with CORS disabled.</p>
+<p>index.html:1 Access to fetch at ‘http://127.0.0.1:8090/list’ from
+origin ‘null’ has been blocked by CORS policy: No
+‘Access-Control-Allow-Origin’ header is present on the requested
+resource. If an opaque response serves your needs, set the request’s
+mode to ‘no-cors’ to fetch the resource with CORS disabled.</p>
 </blockquote>
 </section>
 <section id="same-origin-policy" class="slide level2">
-<h2><a href="https://en.wikipedia.org/wiki/Same-origin_policy">Same-origin Policy</a></h2>
+<h2><a
+href="https://en.wikipedia.org/wiki/Same-origin_policy">Same-origin
+Policy</a></h2>
 <ul>
 <li>Security feature of browsers</li>
 <li>Asynchronous requests only to source of page</li>
@@ -132,7 +154,8 @@ app.listen(8090);
 <section id="promises" class="slide level2">
 <h2>Promises</h2>
 <ul>
-<li>Fetch uses <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises">promises</a></li>
+<li>Fetch uses <a
+href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises">promises</a></li>
 <li>Promises should make it easier to attach callbacks/handlers</li>
 <li>Include success and failure callbacks</li>
 <li>Add (chains of) success callbacks with <code>.then</code></li>
@@ -142,16 +165,19 @@ app.listen(8090);
 </section>
 <section id="catch-example" class="slide level2">
 <h2>catch example</h2>
-<p>Add this to handle any errors from <code>fetch</code> handler chain</p>
+<p>Add this to handle any errors from <code>fetch</code> handler
+chain</p>
 <pre><code>.catch( (error) =&gt; alert(error))</code></pre>
-<p>If you want to deal with 404 errors you will have to look at <code>response.ok</code></p>
+<p>If you want to deal with 404 errors you will have to look at
+<code>response.ok</code></p>
 </section>
 <section id="async-and-await" class="slide level2">
 <h2>async and await</h2>
 <ul>
 <li>New in ES2017</li>
 <li>Provide ‘syntactic sugar’ for promises <code>.catch</code></li>
-<li>Use <code>async</code> keyword before <code>function</code> keyword</li>
+<li>Use <code>async</code> keyword before <code>function</code>
+keyword</li>
 <li>use <code>await</code> keyword in execution</li>
 </ul>
 </section>
@@ -177,12 +203,15 @@ app.listen(8090);
 });</code></pre>
 <p>N.B. <code>catch</code> instead of Python <code>except</code></p>
 </section>
-<section id="how-to-do-the-assignment" class="slide level2">
-<h2>How to do the assignment</h2>
+<section id="summary-1" class="slide level2">
+<h2>Summary</h2>
 <ul>
-<li>Design HTML</li>
-<li>Design web service</li>
-<li>Join with Fetch</li>
+<li>Asynchronous JavaScript (AJAX)</li>
+<li>Fetch API</li>
+<li>Cross-Origin Resource Sharing</li>
+<li>Promises</li>
+<li>async and await</li>
+<li>Exceptions</li>
 </ul>
 </section></section>
     </div>
@@ -190,7 +219,7 @@ app.listen(8090);
 
   <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
 
-  // reveal.js plugins
+  <!-- reveal.js plugins -->
   <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
   <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
   <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
@@ -200,8 +229,145 @@ app.listen(8090);
       // Full list of configuration options available at:
       // https://revealjs.com/config/
       Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
         // Push each slide change to the browser history
-        history: true,
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'default',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
 
         // reveal.js plugins
         plugins: [
