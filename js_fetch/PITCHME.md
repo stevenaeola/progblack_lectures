@@ -189,13 +189,5 @@ window.addEventListener('click', async function(event){
 
 N.B. `catch` instead of Python `except`
 
----
-
-## How to do the assignment
-
-- Design HTML
-- Design web service
-- Join with Fetch
-
 
 
