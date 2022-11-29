@@ -30,7 +30,7 @@
 ## Postman
 
 - Originally a chrome plugin
-- Now a [dekstop application](https://www.postman.com/)
+- Now a [web/dekstop application](https://www.postman.com/)
 - Define a set of requests in a collection
 - Choose GET or POST (or other)
 - Include body parameters for POST
@@ -55,7 +55,7 @@
 - Use nodemon to auto-restart server
 - Add test script to your package.json
 - run test with npm test
-- see some [example tests for thing](https://github.com/stevenaeola/gitpitch/blob/master/prog/nodejs_testing/app.test.js) 
+- see some [example tests for thing](https://github.com/stevenaeola/progblack_lectures/blob/main/nodejs_testing/app.test.js) 
 
 
 ## Separate out app from server
