@@ -19,8 +19,8 @@ https://pollev.com/stevenaeola
 
 # What tools do developers use (poll)? {data-background-color=#6A246D}
 
-[...](https://www.jetbrains.com/lp/devecosystem-2021/)
-[...](https://survey.stackoverflow.co/2022/)
+[...](https://www.jetbrains.com/lp/devecosystem-2022/)
+[...](https://survey.stackoverflow.co/2023/)
 
 ---
 
@@ -74,9 +74,9 @@ https://pollev.com/stevenaeola
 
 ## Teaching plan
 
-- Two lectures a week f2f (Monday 10, Weds 10)
+- Two lectures a week f2f (Thurs 4, Fri 1)
 - One practical a week term 1 (see allocation on MyTimetable)
-- Office hours 11-12 Friday in person or by zoom (see contacts on LU to book a slot)
+- Office hours 2:30-3:30 Friday in person or by zoom (see contacts on LU to book a slot)
 - Term 2 tutorials: no lectures or practicals
 
 ---
@@ -87,7 +87,7 @@ https://pollev.com/stevenaeola
 
 - This is a practically motivated course
 - What should we do as an example?
-- Previously have done cheese, memes, hats, Sue Black, goats
+- Previously have done cheese, memes, hats, Sue Black, goats, pasta
 - Come up with a suggestion in a group of three
 - Then we will have a vote 
 
