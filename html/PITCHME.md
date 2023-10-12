@@ -80,7 +80,7 @@ HyperText Markup Language
 - Make it easy to make things responsive
 - Can sometimes be heavy (large file size, slow)
 - e.g. [Bootstrap](https://getbootstrap.com/) and [alternatives](https://www.creative-tim.com/blog/educational-tech/bootstrap-alternatives/) including [CSS](https://colorlib.com/wp/free-css3-frameworks/)
-- N.B. Frameworks like [React](https://react.dev/ and [Vue](https://vuejs.org/) are different things: they generate HTML
+- N.B. Frameworks like [React](https://react.dev/) and [Vue](https://vuejs.org/) are different things: they generate HTML
 
 ---
 
