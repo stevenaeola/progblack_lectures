@@ -25,7 +25,18 @@ HyperText Markup Language
 
 ---
 
-## HTML tags
+## HTML tags and elements
+
+```
+<html>
+<body>
+  <h1>Hello</h1>
+  <p>World</p>
+</body>
+</html>
+```
+
+---
 
 (In groups)
 
@@ -52,7 +63,7 @@ HyperText Markup Language
 * Standards compliant HTML5 [W3C](https://www.w3.org/TR/html52/) 
   - Check with <https://validator.w3.org/>
   - Or developer tools or chrome plugin
-* Accessible: alt tags; contrast; [WCAG](https://www.w3.org/TR/WCAG21/); [ARIA](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA)
+* Accessible: alt tags; contrast; [WCAG](https://www.w3.org/TR/WCAG21/); [MDN advice](https://developer.mozilla.org/en-US/docs/Learn/Accessibility)
 * Mobile-friendly: viewport; lightweight; responsive
 * Quick-loading
 * Review with e.g. [Lighthouse](https://developers.google.com/web/tools/lighthouse)
@@ -61,25 +72,26 @@ HyperText Markup Language
 
 ---
 
-## Web Front-end Frameworks
+## HTML/CSS Frameworks
 
-- Provide pre-written HTML and JavaScript
 - Apply styles with CSS classes
+- Pre-written HTML templates and (some) JavaScript
 - Make it easy to make things look nice
 - Make it easy to make things responsive
 - Can sometimes be heavy (large file size, slow)
-- e.g. [Bootstrap](https://getbootstrap.com/) and [alternatives](https://classpert.com/blog/top-bootstrap-alternatives)
+- e.g. [Bootstrap](https://getbootstrap.com/) and [alternatives](https://www.creative-tim.com/blog/educational-tech/bootstrap-alternatives/) including [CSS](https://colorlib.com/wp/free-css3-frameworks/)
+- N.B. Frameworks like [React](https://react.dev/ and [Vue](https://vuejs.org/) are different things: they generate HTML
 
 ---
 
-## Pasta
+## Example
 
 To sieve out the stuff we don't want we can
 
 - make our page HTML5 compliant
 - include it in a bootstrap template
 
-Follow progress at <https://github.com/stevenaeola/progblack_2223>
+Follow progress at <https://github.com/stevenaeola/progblack_2324>
 
 
 
