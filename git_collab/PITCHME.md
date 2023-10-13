@@ -79,7 +79,7 @@ Outside of scope of version control. Options include:
 
 ::: incremental
 
-- Push to gitpages
+- Push to [github pages](https://pages.github.com/)
 - Branching: main and develop
 - Feature branching
 - E.g. [trunk-based development](https://www.atlassian.com/continuous-delivery/continuous-integration/trunk-based-development)
@@ -106,7 +106,7 @@ They noted, for example, that “software craftsmanship and clean code,” “em
 
 ---
 
-One participant recommended "Working on a large code base and making changes/additions to it. Reviewing changes other people are making to the codebase. Testing. Finding and fixing bugs. Using source control software, etc. This way students are actually prepared for developing in the real world upon graduating and have an appreciation for best practices, comments, reviews, developer testing, and so on.
+One participant recommended "Working on a large code base and making changes/additions to it. Reviewing changes other people are making to the codebase. Testing. Finding and fixing bugs. Using source control software, etc. This way students are actually prepared for developing in the real world upon graduating and have an appreciation for best practices, comments, reviews, developer testing, and so on."
 
 ---
 

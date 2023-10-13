@@ -68,7 +68,7 @@ Outside of scope of version control. Options include:
 ## Making a release
 
 
-- Push to gitpages
+- Push to [github pages](https://pages.github.com/)
 - Branching: main and develop
 - Feature branching
 - E.g. [trunk-based development](https://www.atlassian.com/continuous-delivery/continuous-integration/trunk-based-development)
@@ -90,7 +90,7 @@ See [Comparing Computing Professionals’ Perceptions of Importance of Skills an
 They noted, for example, that “software craftsmanship and clean code,” “emphasis on coding style and commenting,” and “software maintenance” were not sufficiently stressed within their own undergraduate experiences
 
 
-One participant recommended "Working on a large code base and making changes/additions to it. Reviewing changes other people are making to the codebase. Testing. Finding and fixing bugs. Using source control software, etc. This way students are actually prepared for developing in the real world upon graduating and have an appreciation for best practices, comments, reviews, developer testing, and so on.
+One participant recommended "Working on a large code base and making changes/additions to it. Reviewing changes other people are making to the codebase. Testing. Finding and fixing bugs. Using source control software, etc. This way students are actually prepared for developing in the real world upon graduating and have an appreciation for best practices, comments, reviews, developer testing, and so on."
 
 
 Such projects should be incorporated into early stages of the curriculum "From the get-go people would learn the development environment. Essential tools like git, svn, in unix, and learn some of the history. Then learn languages, design patterns, team interaction, the roles in an agile team, etc

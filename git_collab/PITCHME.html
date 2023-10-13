@@ -10,12 +10,23 @@
   <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
   <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
   <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
   <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/simple.css" id="theme">
@@ -26,7 +37,8 @@
 
 
 <section>
-<section id="collaboration-with-git" class="title-slide slide level1" data-background-color="#7E317B">
+<section id="collaboration-with-git" class="title-slide slide level1"
+data-background-color="#7E317B">
 <h1 data-background-color="#7E317B">Collaboration with git</h1>
 
 </section>
@@ -103,10 +115,13 @@
 <h2>Making a release</h2>
 <div>
 <ul>
-<li class="fragment">Push to gitpages</li>
+<li class="fragment">Push to <a href="https://pages.github.com/">github
+pages</a></li>
 <li class="fragment">Branching: main and develop</li>
 <li class="fragment">Feature branching</li>
-<li class="fragment">E.g. <a href="https://www.atlassian.com/continuous-delivery/continuous-integration/trunk-based-development">trunk-based development</a></li>
+<li class="fragment">E.g. <a
+href="https://www.atlassian.com/continuous-delivery/continuous-integration/trunk-based-development">trunk-based
+development</a></li>
 <li class="fragment">Release vs continuous delivery/deployment</li>
 </ul>
 </div>
@@ -114,32 +129,51 @@
 <section id="see-also" class="slide level2">
 <h2>See also</h2>
 <ul>
-<li><a href="https://www.atlassian.com/git/tutorials/syncing">Collaborating with Git</a></li>
-<li><a href="https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging">Git Branching</a></li>
+<li><a
+href="https://www.atlassian.com/git/tutorials/syncing">Collaborating
+with Git</a></li>
+<li><a
+href="https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging">Git
+Branching</a></li>
 </ul>
 </section>
 <section id="why-are-we-doing-this" class="slide level2">
 <h2>Why are we doing this?</h2>
-<p>See <a href="https://dl.acm.org/citation.cfm?id=3218430">Comparing Computing Professionals’ Perceptions of Importance of Skills and Knowledge on the Job and Coverage in Undergraduate Experiences</a> (institution sign-in)</p>
+<p>See <a href="https://dl.acm.org/citation.cfm?id=3218430">Comparing
+Computing Professionals’ Perceptions of Importance of Skills and
+Knowledge on the Job and Coverage in Undergraduate Experiences</a>
+(institution sign-in)</p>
 </section>
 <section class="slide level2">
 
-<p>They noted, for example, that “software craftsmanship and clean code,” “emphasis on coding style and commenting,” and “software maintenance” were not sufficiently stressed within their own undergraduate experiences</p>
+<p>They noted, for example, that “software craftsmanship and clean
+code,” “emphasis on coding style and commenting,” and “software
+maintenance” were not sufficiently stressed within their own
+undergraduate experiences</p>
 </section>
 <section class="slide level2">
 
-<p>One participant recommended "Working on a large code base and making changes/additions to it. Reviewing changes other people are making to the codebase. Testing. Finding and fixing bugs. Using source control software, etc. This way students are actually prepared for developing in the real world upon graduating and have an appreciation for best practices, comments, reviews, developer testing, and so on.</p>
+<p>One participant recommended “Working on a large code base and making
+changes/additions to it. Reviewing changes other people are making to
+the codebase. Testing. Finding and fixing bugs. Using source control
+software, etc. This way students are actually prepared for developing in
+the real world upon graduating and have an appreciation for best
+practices, comments, reviews, developer testing, and so on.”</p>
 </section>
 <section class="slide level2">
 
-<p>Such projects should be incorporated into early stages of the curriculum "From the get-go people would learn the development environment. Essential tools like git, svn, in unix, and learn some of the history. Then learn languages, design patterns, team interaction, the roles in an agile team, etc</p>
+<p>Such projects should be incorporated into early stages of the
+curriculum “From the get-go people would learn the development
+environment. Essential tools like git, svn, in unix, and learn some of
+the history. Then learn languages, design patterns, team interaction,
+the roles in an agile team, etc</p>
 </section></section>
     </div>
   </div>
 
   <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
 
-  // reveal.js plugins
+  <!-- reveal.js plugins -->
   <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
   <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
   <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
@@ -149,8 +183,145 @@
       // Full list of configuration options available at:
       // https://revealjs.com/config/
       Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
         // Push each slide change to the browser history
-        history: true,
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'default',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
 
         // reveal.js plugins
         plugins: [
