@@ -10,12 +10,20 @@
   <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
   <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
   <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
   <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/simple.css" id="theme">
@@ -26,7 +34,8 @@
 
 
 <section>
-<section id="git-branching" class="title-slide slide level1" data-background-color="#7E317B">
+<section id="git-branching" class="title-slide slide level1"
+data-background-color="#7E317B">
 <h1 data-background-color="#7E317B">git branching</h1>
 
 </section>
@@ -50,7 +59,8 @@
 <h1>Choose some issues</h1>
 
 </section>
-<section id="working-with-multiple-remotesbranches" class="slide level2">
+<section id="working-with-multiple-remotesbranches"
+class="slide level2">
 <h2>Working with multiple remotes/branches</h2>
 <div>
 <ul>
@@ -60,23 +70,37 @@
 </ul></li>
 <li class="fragment">Fork the repo at github (c.f. clone to local)</li>
 <li class="fragment">clone your forked repo into your local machine</li>
-<li class="fragment">add the original as upstream repo with <a href="https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/configuring-a-remote-for-a-fork">set remote</a></li>
-<li class="fragment">you can <code>git push</code> and <code>git pull</code> with your forked repo</li>
-<li class="fragment">you can only <code>git pull</code> with your upstream repo</li>
+<li class="fragment">add the original as upstream repo with <a
+href="https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/configuring-a-remote-for-a-fork">set
+remote</a></li>
+<li class="fragment">you can <code>git push</code> and
+<code>git pull</code> with your forked repo</li>
+<li class="fragment">you can only <code>git pull</code> with your
+upstream repo</li>
 </ul>
 </div>
 </section>
 <section id="an-example" class="slide level2">
 <h2>An example</h2>
 <div>
-<p>I use <a href="https://nodered.org/">node-red</a> for <a href="https://flows.nodered.org/node/node-red-contrib-music">music</a></p>
+<p>I use <a href="https://nodered.org/">node-red</a> for <a
+href="https://flows.nodered.org/node/node-red-contrib-music">music</a></p>
 <ul>
 <li class="fragment">Users can contribute custom nodes</li>
-<li class="fragment">I wanted to have a weighted random distribution</li>
-<li class="fragment">But somebody else had already built a <a href="https://flows.nodered.org/node/node-red-contrib-random-output">node for randomising</a></li>
-<li class="fragment">So <a href="https://github.com/lutzer/node-red-contrib-random-output/issues/1">I asked if they would accept a pull request</a></li>
-<li class="fragment">Then I <a href="https://github.com/stevenaeola/node-red-contrib-random-output">forked their repo</a></li>
-<li class="fragment">And I <a href="https://github.com/lutzer/node-red-contrib-random-output/pull/2">made a pull request</a></li>
+<li class="fragment">I wanted to have a weighted random
+distribution</li>
+<li class="fragment">But somebody else had already built a <a
+href="https://flows.nodered.org/node/node-red-contrib-random-output">node
+for randomising</a></li>
+<li class="fragment">So <a
+href="https://github.com/lutzer/node-red-contrib-random-output/issues/1">I
+asked if they would accept a pull request</a></li>
+<li class="fragment">Then I <a
+href="https://github.com/stevenaeola/node-red-contrib-random-output">forked
+their repo</a></li>
+<li class="fragment">And I <a
+href="https://github.com/lutzer/node-red-contrib-random-output/pull/2">made
+a pull request</a></li>
 </ul>
 </div>
 </section>
@@ -84,7 +108,9 @@
 <h2>Let’s do it: set up</h2>
 <ul>
 <li>One of you operate the keyboard and share screen</li>
-<li>Fork the <a href="https://github.com/stevenaeola/progblack_2223">pasta</a>, clone and set upstream remote</li>
+<li>Fork the <a
+href="https://github.com/stevenaeola/progblack_2324">Ramsay</a>, clone
+and set upstream remote</li>
 <li>This may go horribly wrong: embrace failure!</li>
 </ul>
 </section>
@@ -94,8 +120,11 @@
 <li>Create/choose an issue on github</li>
 <li>Change your local code to address the issue</li>
 <li>Add and commit your change (to main branch)</li>
-<li>push your branch to forked repo <code>git push origin main</code></li>
-<li>on github <a href="https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request-from-a-fork">make a pull request (PR)</a>
+<li>push your branch to forked repo
+<code>git push origin main</code></li>
+<li>on github <a
+href="https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request-from-a-fork">make
+a pull request (PR)</a>
 <ul>
 <li>from the main branch on your fork</li>
 <li>to the main branch on the upstream repo</li>
@@ -114,13 +143,20 @@
 <h2>git revisited: basic branching</h2>
 <div>
 <ul>
-<li class="fragment">good for when you’re working on more than issue</li>
-<li class="fragment">create a branch with <code>git branch iss52</code></li>
-<li class="fragment">check it out with <code>git checkout iss52</code></li>
-<li class="fragment">do some work, <code>add</code> and <code>commit</code></li>
-<li class="fragment">go back to the main branch: <code>git checkout main</code></li>
-<li class="fragment">merge your branch: <code>git merge iss52</code></li>
-<li class="fragment">delete your branch: <code>git branch -d iss52</code></li>
+<li class="fragment">good for when you’re working on more than
+issue</li>
+<li class="fragment">create a branch with
+<code>git branch iss52</code></li>
+<li class="fragment">check it out with
+<code>git checkout iss52</code></li>
+<li class="fragment">do some work, <code>add</code> and
+<code>commit</code></li>
+<li class="fragment">go back to the main branch:
+<code>git checkout main</code></li>
+<li class="fragment">merge your branch:
+<code>git merge iss52</code></li>
+<li class="fragment">delete your branch:
+<code>git branch -d iss52</code></li>
 </ul>
 </div>
 </section>
@@ -133,8 +169,11 @@
 <ul>
 <li>Do not merge your issue branch into main</li>
 </ul></li>
-<li>push your branch to forked repo <code>git push origin issNN</code></li>
-<li>on github <a href="https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request-from-a-fork">make a pull request (PR)</a>
+<li>push your branch to forked repo
+<code>git push origin issNN</code></li>
+<li>on github <a
+href="https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request-from-a-fork">make
+a pull request (PR)</a>
 <ul>
 <li>from the issue branch on your fork</li>
 <li>to the main branch on the upstream repo</li>
@@ -143,7 +182,11 @@
 </section>
 <section id="and-then" class="slide level2">
 <h2>And then …</h2>
-<p>If your PR is accepted - Switch to main <code>git checkout main</code> - Pull the changes from upstream - <code>git pull upstream</code> - Repeat new issue branch/commit/push/PR When your PR is accepted/rejected - you might want to remove that branch</p>
+<p>If your PR is accepted - Switch to main
+<code>git checkout main</code> - Pull the changes from upstream -
+<code>git pull upstream</code> - Repeat new issue branch/commit/push/PR
+When your PR is accepted/rejected - you might want to remove that
+branch</p>
 </section>
 <section id="what-is-the-point-of-all-that" class="slide level2">
 <h2>What is the point of all that?</h2>
@@ -151,7 +194,8 @@
 <li>Different people can work on different features</li>
 <li>Before merging you can update with <code>git pull</code></li>
 <li>Automatically merges and identifies issues</li>
-<li>See also <a href="https://git-scm.com/book/en/v2/Git-Branching-Rebasing"><code>git rebase</code></a></li>
+<li>See also <a
+href="https://git-scm.com/book/en/v2/Git-Branching-Rebasing"><code>git rebase</code></a></li>
 </ul>
 </section></section>
     </div>
@@ -159,7 +203,7 @@
 
   <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
 
-  // reveal.js plugins
+  <!-- reveal.js plugins -->
   <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
   <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
   <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
@@ -169,8 +213,145 @@
       // Full list of configuration options available at:
       // https://revealjs.com/config/
       Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
         // Push each slide change to the browser history
-        history: true,
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'default',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
 
         // reveal.js plugins
         plugins: [

@@ -47,7 +47,7 @@ I use [node-red](https://nodered.org/) for [music](https://flows.nodered.org/nod
 ## Let's do it: set up
 
 - One of you operate the keyboard and share screen
-- Fork the [pasta](https://github.com/stevenaeola/progblack_2223), clone and set upstream remote
+- Fork the [Ramsay](https://github.com/stevenaeola/progblack_2324), clone and set upstream remote
 - This may go horribly wrong: embrace failure!
 
 
