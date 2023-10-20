@@ -7,10 +7,10 @@
 - Originally in browsers
 - Not Java
 - It has some good parts
-- Standardised by Ecma (once ECMA) as EcmaScript
-- Current version is [ES12 (2022)](https://dev.to/brayanarrieta/new-javascript-features-ecmascript-2022-with-examples-4nhg)
+- Standardised by [ecma](https://www.ecma-international.org/) (once ECMA) as EcmaScript
+- Current version is [ES13 (2023)](https://www.ecma-international.org/publications-and-standards/standards/ecma-262/) with some [new features](https://blog.saeloun.com/2023/08/11/2023-ECMAScript-2023-new-features/)
 - Most recent widely-supported version is ES6 (2015)
-- [Support varies](http://kangax.github.io/compat-table/es6/)
+- [Support varies](https://caniuse.com/?search=javascript)
 
 
 
@@ -20,7 +20,7 @@
 - More recently JS is also used server-side: nodejs
 - Good JS engines in mobile browsers
 - JS often used for cross-platform App dev with [Progressive Web Apps](https://web.dev/progressive-web-apps/)
-- Also for desktop applications with [electron](https://electronjs.org/) e.g. [atom](https://atom.io/)
+- Also for desktop applications with [electron](https://electronjs.org/)
 - Interpreted, not compiled: errors only happen at run-time
 - `console.log` is your friend
 
@@ -78,7 +78,7 @@ Can run in browser as file, not just with http
 - Content Delivery Networks (CDN)
 ```HTML
 <script
- src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js">
+src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
 </script>
 ```
 
@@ -140,7 +140,7 @@ if (condition) {
 }
 ```
 
-See also `while`, `for`, `switch`, `do`, `throw`, `try`, `catch`, ternary
+See also `while`, `for`, `switch`, `do`, `throw`, `try`, `catch`, [ternary](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_operator)
 
 
 ## true, false, truthy and falsy
@@ -263,6 +263,6 @@ console.log(myCar['make']);
 - Set, Map
 - spread operator
 - <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide>
-- <https://www.theodinproject.com/courses/web-development-101/>
+- <https://www.theodinproject.com/lessons/foundations-fundamentals-part-1>
 - <https://www.w3schools.com/js/default.asp>
 
