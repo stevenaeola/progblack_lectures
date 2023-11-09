@@ -8,6 +8,17 @@
 
 Responses include 
 
+- An executable (.exe, .msi)
+- A document (pdf, word)
+- Some data (XML, JSON)
+- A CSS file
+- A JavaScript program
+- A redirection (in headers)
+- A cookie value (in headers)
+- An error
+- A combination of the above
+
+Response to request may be used to update or replace some or all of a web page.
 
 <http://pollev.com/stevenaeola>
 
