@@ -172,8 +172,8 @@ installs and puts dependency in package.json
 # Express routing
 
 ```
-var express = require('express')
-var app = express()
+const express = require('express')
+const app = express()
 
 app.get('/', function(req, resp){
   resp.send('Hello world')
@@ -186,8 +186,8 @@ This just starts an express app handling GET requests via port 8090
 ---
 
 ```
-var express = require('express')
-var app = express()
+const express = require('express')
+const app = express()
 
 app.get('/random/:max', function(req, resp){
   max = parseInt(req.params.max)

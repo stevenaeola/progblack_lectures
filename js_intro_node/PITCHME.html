@@ -10,12 +10,23 @@
   <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
   <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
   <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
   <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/simple.css" id="theme">
@@ -25,10 +36,14 @@
     <div class="slides">
 
 
-<section id="introduction-to-nodejs" class="slide level1" data-background-color="#7E317B">
+<section id="introduction-to-nodejs" class="slide level1"
+data-background-color="#7E317B">
 <h1 data-background-color="#7E317B">Introduction to nodejs</h1>
 <figure>
-<img data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/220px-Node.js_logo.svg.png" style="width:40.0%" alt="." /><figcaption aria-hidden="true">.</figcaption>
+<img
+data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/220px-Node.js_logo.svg.png"
+style="width:40.0%" alt="." />
+<figcaption aria-hidden="true">.</figcaption>
 </figure>
 </section>
 <section class="slide level1">
@@ -36,10 +51,12 @@
 <h2 id="what-and-why">What and Why?</h2>
 <div>
 <ul>
-<li class="fragment">Server-side scripting in JavaScript: alternative to php, asp, RoR</li>
+<li class="fragment">Server-side scripting in JavaScript: alternative to
+php, asp, RoR</li>
 <li class="fragment">Single thread execution: non-blocking</li>
 <li class="fragment">Not designed for compute-heavy applications</li>
-<li class="fragment">Package manager npm claims to be largest ecosystem of open source libraries in the world</li>
+<li class="fragment">Package manager npm claims to be largest ecosystem
+of open source libraries in the world</li>
 </ul>
 </div>
 </section>
@@ -49,11 +66,19 @@
 <div>
 <ul>
 <li class="fragment">Developed from 2009</li>
-<li class="fragment">Based on Chrome V8 Javascript engine: compiles to machine code</li>
-<li class="fragment">Originally by Joyent, part of <a href="https://openjsf.org/">OpenJS foundation</a></li>
-<li class="fragment"><a href="https://flaviocopes.com/node-history/">Major fork in 2014</a> to io.js, since merged</li>
+<li class="fragment">Based on Chrome V8 Javascript engine: compiles to
+machine code</li>
+<li class="fragment">Originally by Joyent, part of <a
+href="https://openjsf.org/">OpenJS foundation</a></li>
+<li class="fragment"><a
+href="https://flaviocopes.com/node-history/">Major fork in 2014</a> to
+io.js, since merged</li>
 <li class="fragment">MIT-style licence</li>
-<li class="fragment">Package manager <a href="https://www.npmjs.com/">npm</a> (and <a href="https://yarnpkg.com/">yarn</a>). See <a href="https://blog.npmjs.org/post/141577284765/kik-left-pad-and-npm">left pad incident</a></li>
+<li class="fragment">Package manager <a
+href="https://www.npmjs.com/">npm</a> (and <a
+href="https://yarnpkg.com/">yarn</a>). See <a
+href="https://blog.npmjs.org/post/141577284765/kik-left-pad-and-npm">left
+pad incident</a></li>
 </ul>
 </div>
 </section>
@@ -62,9 +87,12 @@
 <h2 id="hosting">Hosting</h2>
 <div>
 <ul>
-<li class="fragment">Cross-platform installation available for local hosting</li>
-<li class="fragment">Available on many PaaS installations e.g. AWS, AZure, openshift, IBM bluemix</li>
-<li class="fragment">Not as widely available as php but more than most others (my opinion/experience)</li>
+<li class="fragment">Cross-platform installation available for local
+hosting</li>
+<li class="fragment">Available on many PaaS installations e.g. AWS,
+AZure, openshift, IBM bluemix</li>
+<li class="fragment">Not as widely available as php but more than most
+others (my opinion/experience)</li>
 </ul>
 </div>
 </section>
@@ -76,7 +104,8 @@
 <ul>
 <li class="fragment">Save in hello.js</li>
 <li class="fragment">run with <code>node hello.js</code> or via VSC</li>
-<li class="fragment">uses terminal as console instead of browser tools</li>
+<li class="fragment">uses terminal as console instead of browser
+tools</li>
 </ul>
 </div>
 </section>
@@ -97,9 +126,11 @@ console.log(&#39;Server running at http://127.0.0.1:8080/&#39;);</code></pre>
 <ul>
 <li>Use module http, based on CommonJS</li>
 <li>Module = file</li>
-<li><code>require</code> returns a js object that contains the module components</li>
+<li><code>require</code> returns a js object that contains the module
+components</li>
 <li>modules are installed with npm if necessary (plus dependencies)</li>
-<li>node starts its own web server rather than running as an apache module (like php often is)</li>
+<li>node starts its own web server rather than running as an apache
+module (like php often is)</li>
 </ul>
 </section>
 <section class="slide level1">
@@ -109,25 +140,32 @@ console.log(&#39;Server running at http://127.0.0.1:8080/&#39;);</code></pre>
 <ul>
 <li class="fragment">node runs on an event loop</li>
 <li class="fragment">callbacks are associated with events</li>
-<li class="fragment">programs should be non-blocking so that callbacks are provided for things like
+<li class="fragment">programs should be non-blocking so that callbacks
+are provided for things like
 <ul>
 <li class="fragment">block of data arrives from file</li>
 <li class="fragment">block of data arrives from REST request</li>
 <li class="fragment">results data arrives from database request</li>
 </ul></li>
 <li class="fragment">callbacks can themselves trigger new events</li>
-<li class="fragment">next instruction is executed once all callbacks are complete</li>
+<li class="fragment">next instruction is executed once all callbacks are
+complete</li>
 </ul>
 </div>
 </section>
 <section class="slide level1">
 
 <figure>
-<img data-src="https://i.stack.imgur.com/YCTgK.png" alt="nodejs threading model" /><figcaption aria-hidden="true">nodejs threading model</figcaption>
+<img data-src="https://i.stack.imgur.com/YCTgK.png"
+alt="nodejs threading model" />
+<figcaption aria-hidden="true">nodejs threading model</figcaption>
 </figure>
-<p>Thanks to <a href="http://stackoverflow.com/questions/14795145/how-the-single-threaded-non-blocking-io-model-works-in-node-js">SO user568109</a></p>
+<p>Thanks to <a
+href="http://stackoverflow.com/questions/14795145/how-the-single-threaded-non-blocking-io-model-works-in-node-js">SO
+user568109</a></p>
 </section>
-<section id="routing-requests" class="slide level1" data-background-color="#A5C8D0">
+<section id="routing-requests" class="slide level1"
+data-background-color="#A5C8D0">
 <h1 data-background-color="#A5C8D0">Routing requests</h1>
 </section>
 <section class="slide level1">
@@ -136,10 +174,15 @@ console.log(&#39;Server running at http://127.0.0.1:8080/&#39;);</code></pre>
 <div>
 <ul>
 <li class="fragment">Variables can be GET-encoded</li>
-<li class="fragment">In REST APIs they are often included in the URL directly (without question marks)</li>
-<li class="fragment">E.g. use <a href="https://developer.twitter.com/en/docs/api-reference-index">twitter API</a></li>
-<li class="fragment">We want to use routing to pick bits out of the URL for this in nodejs</li>
-<li class="fragment">There is a commonly used package called <a href="https://expressjs.com/">express</a></li>
+<li class="fragment">In REST APIs they are often included in the URL
+directly (without question marks)</li>
+<li class="fragment">E.g. use <a
+href="https://developer.twitter.com/en/docs/api-reference-index">twitter
+API</a></li>
+<li class="fragment">We want to use routing to pick bits out of the URL
+for this in nodejs</li>
+<li class="fragment">There is a commonly used package called <a
+href="https://expressjs.com/">express</a></li>
 </ul>
 </div>
 </section>
@@ -165,9 +208,11 @@ console.log(&#39;Server running at http://127.0.0.1:8080/&#39;);</code></pre>
 <li>X = 0 for pre-release versions</li>
 <li>Increase Z for bug-fixes, no new functionality</li>
 <li>Increase Y, set Z=0 for backwards-compatibile new functionality</li>
-<li>Increase X, set Y=Z=0 for backwards-incompatible new functionality</li>
+<li>Increase X, set Y=Z=0 for backwards-incompatible new
+functionality</li>
 </ul></li>
-<li>In package.json can use tilde to match minor version, caret to match major version etc</li>
+<li>In package.json can use tilde to match minor version, caret to match
+major version etc</li>
 </ul>
 </section>
 <section id="install-express" class="slide level1">
@@ -181,20 +226,21 @@ console.log(&#39;Server running at http://127.0.0.1:8080/&#39;);</code></pre>
 </section>
 <section id="express-routing" class="slide level1">
 <h1>Express routing</h1>
-<pre><code>var express = require(&#39;express&#39;)
-var app = express()
+<pre><code>const express = require(&#39;express&#39;)
+const app = express()
 
 app.get(&#39;/&#39;, function(req, resp){
   resp.send(&#39;Hello world&#39;)
 })
 
 app.listen(8090)</code></pre>
-<p>This just starts an express app handling GET requests via port 8090</p>
+<p>This just starts an express app handling GET requests via port
+8090</p>
 </section>
 <section class="slide level1">
 
-<pre><code>var express = require(&#39;express&#39;)
-var app = express()
+<pre><code>const express = require(&#39;express&#39;)
+const app = express()
 
 app.get(&#39;/random/:max&#39;, function(req, resp){
   max = parseInt(req.params.max)
@@ -222,7 +268,8 @@ app.listen(8090)</code></pre>
 </section>
 <section class="slide level1">
 
-<h2 id="serving-client-content-through-node">Serving client content through node</h2>
+<h2 id="serving-client-content-through-node">Serving client content
+through node</h2>
 <ul>
 <li>Add this line to server (middleware)</li>
 </ul>
@@ -234,7 +281,8 @@ app.listen(8090)</code></pre>
 </ul>
 <pre><code>127.0.0.1:8090/index.html</code></pre>
 </section>
-<section id="in-summary" class="slide level1" data-background-color="#A5C8D0">
+<section id="in-summary" class="slide level1"
+data-background-color="#A5C8D0">
 <h1 data-background-color="#A5C8D0">In Summary</h1>
 <ul>
 <li>nodejs provides server-side JavaScript</li>
@@ -248,7 +296,7 @@ app.listen(8090)</code></pre>
 
   <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
 
-  // reveal.js plugins
+  <!-- reveal.js plugins -->
   <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
   <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
   <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
@@ -258,8 +306,145 @@ app.listen(8090)</code></pre>
       // Full list of configuration options available at:
       // https://revealjs.com/config/
       Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
         // Push each slide change to the browser history
-        history: true,
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'default',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
 
         // reveal.js plugins
         plugins: [
