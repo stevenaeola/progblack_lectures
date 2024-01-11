@@ -6,19 +6,7 @@
 
 ## Possible responses from a web request
 
-Responses include 
-
-- An executable (.exe, .msi)
-- A document (pdf, word)
-- Some data (XML, JSON)
-- A CSS file
-- A JavaScript program
-- A redirection (in headers)
-- A cookie value (in headers)
-- An error
-- A combination of the above
-
-Response to request may be used to update or replace some or all of a web page.
+Responses include ...
 
 <http://pollev.com/stevenaeola>
 
@@ -28,19 +16,6 @@ Response to request may be used to update or replace some or all of a web page.
 ## Sources of requests
 
 How might http requests be generated?
-
-- Hyperlink followed
-- Form submitted
-- Clicking in an image map
-- Image included in source file
-- CSS included in source file
-- Frameset or iframe in HTML source (can be recursive)
-- Following a redirection (including 301 error)
-- JavaScript execution (triggered by mouseover etc)
-- Plugin execution e.g. pdf
-- From a server (e.g. curl, robot, web service request)
-
-Response to request may be used to update or replace some or all of a web page.
 
 ---
 
@@ -102,7 +77,8 @@ At a command prompt:
 - __GET__ most common
 - __POST__ for some forms
 - __HEAD__ to check if a page exists
-- __PUT__ rarely used outside web services
+- __PUT__ replace (rarely used outside web services)
+- __PATCH__ update (rarely used outside web services)
 - __DELETE__ rarely used outside web services
 
 Headers can include cookie values

@@ -18,8 +18,11 @@
     div.columns{display: flex; gap: min(4vw, 1.5em);}
     div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
     ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
       width: 0.8em;
       margin: 0 0.8em 0.2em -1.6em;
       vertical-align: middle;
@@ -42,40 +45,13 @@ data-background-color="#7E317B">
 <section id="possible-responses-from-a-web-request"
 class="slide level2">
 <h2>Possible responses from a web request</h2>
-<p>Responses include</p>
-<ul>
-<li>An executable (.exe, .msi)</li>
-<li>A document (pdf, word)</li>
-<li>Some data (XML, JSON)</li>
-<li>A CSS file</li>
-<li>A JavaScript program</li>
-<li>A redirection (in headers)</li>
-<li>A cookie value (in headers)</li>
-<li>An error</li>
-<li>A combination of the above</li>
-</ul>
-<p>Response to request may be used to update or replace some or all of a
-web page.</p>
+<p>Responses include …</p>
 <p><a href="http://pollev.com/stevenaeola"
 class="uri">http://pollev.com/stevenaeola</a></p>
 </section>
 <section id="sources-of-requests" class="slide level2">
 <h2>Sources of requests</h2>
 <p>How might http requests be generated?</p>
-<ul>
-<li>Hyperlink followed</li>
-<li>Form submitted</li>
-<li>Clicking in an image map</li>
-<li>Image included in source file</li>
-<li>CSS included in source file</li>
-<li>Frameset or iframe in HTML source (can be recursive)</li>
-<li>Following a redirection (including 301 error)</li>
-<li>JavaScript execution (triggered by mouseover etc)</li>
-<li>Plugin execution e.g. pdf</li>
-<li>From a server (e.g. curl, robot, web service request)</li>
-</ul>
-<p>Response to request may be used to update or replace some or all of a
-web page.</p>
 </section>
 <section id="hypertext-transfer-protocol-http-basics"
 class="slide level2">
@@ -139,7 +115,9 @@ for multiple sites on same IP</li>
 <li><strong>GET</strong> most common</li>
 <li><strong>POST</strong> for some forms</li>
 <li><strong>HEAD</strong> to check if a page exists</li>
-<li><strong>PUT</strong> rarely used outside web services</li>
+<li><strong>PUT</strong> replace (rarely used outside web services)</li>
+<li><strong>PATCH</strong> update (rarely used outside web
+services)</li>
 <li><strong>DELETE</strong> rarely used outside web services</li>
 </ul>
 <p>Headers can include cookie values</p>
