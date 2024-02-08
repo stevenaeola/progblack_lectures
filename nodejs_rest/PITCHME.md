@@ -33,10 +33,10 @@
 ## REST parameters
 
 - For GET methods we have [already talked about this](https://github.com/stevenaeola/progblack_lectures/blob/main/js_intro_node/README.md)
-- For POST methods you may need to [configure body parser](https://github.com/stevenaeola/proglabs_js/tree/master/node_routing)
+- For POST methods you will need to configure body parser for [urlencoding](https://github.com/stevenaeola/proglabs_js/tree/master/node_routing) and/or JSON
 
 ```
-app.use(express.urlencoded());
+app.use(express.json());
 ```
 
 - Access values with `req.body.var_name`
@@ -61,3 +61,12 @@ or
 event.stopPropogation();
 ```
 
+---
+
+## Sending POST data from a form as JSON
+
+- Use a [FormData](https://developer.mozilla.org/en-US/docs/Web/API/FormData) object to extract all inputs
+- Turn this into an object with [Object.fromEntries](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/fromEntries)
+- Turn this into a string with [JSON.stringify](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify)
+- Make sure the headers in your fetch set the content type to be application/json
+- Make sure your server is using the [express.json middleware](https://expressjs.com/en/api.html#express.json)

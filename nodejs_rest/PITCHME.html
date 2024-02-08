@@ -18,8 +18,11 @@
     div.columns{display: flex; gap: min(4vw, 1.5em);}
     div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
     ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
       width: 0.8em;
       margin: 0 0.8em 0.2em -1.6em;
       vertical-align: middle;
@@ -83,11 +86,11 @@ href="https://developers.google.com/gmail/api/v1/reference/">gmail</a></li>
 <li>For GET methods we have <a
 href="https://github.com/stevenaeola/progblack_lectures/blob/main/js_intro_node/README.md">already
 talked about this</a></li>
-<li>For POST methods you may need to <a
-href="https://github.com/stevenaeola/proglabs_js/tree/master/node_routing">configure
-body parser</a></li>
+<li>For POST methods you will need to configure body parser for <a
+href="https://github.com/stevenaeola/proglabs_js/tree/master/node_routing">urlencoding</a>
+and/or JSON</li>
 </ul>
-<pre><code>app.use(express.urlencoded());</code></pre>
+<pre><code>app.use(express.json());</code></pre>
 <ul>
 <li>Access values with <code>req.body.var_name</code></li>
 </ul>
@@ -108,6 +111,24 @@ page</li>
 <pre><code>event.preventDefault();</code></pre>
 <p>or</p>
 <pre><code>event.stopPropogation();</code></pre>
+</section>
+<section id="sending-post-data-from-a-form-as-json"
+class="slide level2">
+<h2>Sending POST data from a form as JSON</h2>
+<ul>
+<li>Use a <a
+href="https://developer.mozilla.org/en-US/docs/Web/API/FormData">FormData</a>
+object to extract all inputs</li>
+<li>Turn this into an object with <a
+href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/fromEntries">Object.fromEntries</a></li>
+<li>Turn this into a string with <a
+href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify">JSON.stringify</a></li>
+<li>Make sure the headers in your fetch set the content type to be
+application/json</li>
+<li>Make sure your server is using the <a
+href="https://expressjs.com/en/api.html#express.json">express.json
+middleware</a></li>
+</ul>
 </section></section>
     </div>
   </div>
