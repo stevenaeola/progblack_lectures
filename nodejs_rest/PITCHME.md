@@ -70,3 +70,4 @@ event.stopPropogation();
 - Turn this into a string with [JSON.stringify](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify)
 - Make sure the headers in your fetch set the content type to be application/json
 - Make sure your server is using the [express.json middleware](https://expressjs.com/en/api.html#express.json)
+- See the [example server][server.js] and [example client](client/)
