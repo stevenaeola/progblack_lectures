@@ -28,14 +28,14 @@
 
 - Set method to `POST`
 - Set `'Content-Type': 'application/json'` in headers
-- Use [JSON.stringify](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) to encode body
+- Use [JSON.stringify()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) to encode body
 - See [postStuff example](./postStuff.js)
 - Note use of [httpbin](https://httpbin.org) for testing client without a server
 
 ## Using JSON response to update DOM (client)
 
-- Get JSON from server
-- Use [JSON.parse](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse) to make an Array/Object
+- Get JSON from server with [res.json](https://developer.mozilla.org/en-US/docs/Web/API/Response/json)
+- Or use [JSON.parse()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse) on [res.text()](https://developer.mozilla.org/en-US/docs/Web/API/Response/text) to make an Array/Object
 - Iterate through the response with 
   - [for...of](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of) for an Array
   - [for...in](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in) for an Object
@@ -53,8 +53,8 @@ app.use(express.json());
 Then access `req.body` within a `.post` route.
 
 To send JSON jwith express either
-- use [res.json](https://expressjs.com/en/api.html#res.json)
-- pass [res.send](https://expressjs.com/en/api.html#res.send) an Array or Object
+- use [res.json()](https://expressjs.com/en/api.html#res.json)
+- pass [res.send()](https://expressjs.com/en/api.html#res.send) an Array or Object
 
 ## Writing JSON to a file
 

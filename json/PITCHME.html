@@ -79,7 +79,7 @@ summary</a></li>
 <li>Set method to <code>POST</code></li>
 <li>Set <code>'Content-Type': 'application/json'</code> in headers</li>
 <li>Use <a
-href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify">JSON.stringify</a>
+href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify">JSON.stringify()</a>
 to encode body</li>
 <li>See <a href="./postStuff.js">postStuff example</a></li>
 <li>Note use of <a href="https://httpbin.org">httpbin</a> for testing
@@ -90,9 +90,12 @@ client without a server</li>
 class="slide level2">
 <h2>Using JSON response to update DOM (client)</h2>
 <ul>
-<li>Get JSON from server</li>
-<li>Use <a
-href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse">JSON.parse</a>
+<li>Get JSON from server with <a
+href="https://developer.mozilla.org/en-US/docs/Web/API/Response/json">res.json</a></li>
+<li>Or use <a
+href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse">JSON.parse()</a>
+on <a
+href="https://developer.mozilla.org/en-US/docs/Web/API/Response/text">res.text()</a>
 to make an Array/Object</li>
 <li>Iterate through the response with
 <ul>
@@ -117,9 +120,9 @@ href="https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML">innerH
 <p>Then access <code>req.body</code> within a <code>.post</code>
 route.</p>
 <p>To send JSON jwith express either - use <a
-href="https://expressjs.com/en/api.html#res.json">res.json</a> - pass <a
-href="https://expressjs.com/en/api.html#res.send">res.send</a> an Array
-or Object</p>
+href="https://expressjs.com/en/api.html#res.json">res.json()</a> - pass
+<a href="https://expressjs.com/en/api.html#res.send">res.send()</a> an
+Array or Object</p>
 </section>
 <section id="writing-json-to-a-file" class="slide level2">
 <h2>Writing JSON to a file</h2>

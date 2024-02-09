@@ -3,7 +3,7 @@
 async function postStuff(){
     let response = await fetch('https://httpbin.org/post', 
     {
-        method: 'post',
+        method: 'POST',
         headers: {
          'Accept': 'application/json, text/plain, */*',
          'Content-Type': 'application/json'
