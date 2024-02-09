@@ -33,7 +33,7 @@
 
 - Set method to `POST`
 - Set `'Content-Type': 'application/json'` in headers
-- Use `JSON.stringify` to encode body
+- Use [JSON.stringify](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) to encode body
 - See [postStuff example](./postStuff.js)
 - Note use of [httpbin](https://httpbin.org) for testing client without a server
 
