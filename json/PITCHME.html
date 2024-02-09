@@ -69,29 +69,60 @@ href="https://github.com/FasterXML/jackson">Java</a> etc</li>
 summary</a></li>
 <li>Subset of object literal notation in JavaScript
 <ul>
-<li>Object keys need to be in quotes</li>
+<li>Object keys need to be in (double) quotes</li>
 </ul></li>
 </ul>
 </section>
 <section id="sending-json-with-fetch" class="slide level2">
 <h2>Sending JSON with fetch</h2>
 <ul>
-<li>Set method to <code>post</code></li>
-<li>Set <code>'Content-Type': 'application/json'</code></li>
+<li>Set method to <code>POST</code></li>
+<li>Set <code>'Content-Type': 'application/json'</code> in headers</li>
 <li>Use <code>JSON.stringify</code> to encode body</li>
 <li>See <a href="./postStuff.js">postStuff example</a></li>
+<li>Note use of <a href="https://httpbin.org">httpbin</a> for testing
+client without a server</li>
 </ul>
 </section>
-<section id="receiving-json-with-express" class="slide level2">
-<h2>Receiving JSON with express</h2>
+<section id="using-json-response-to-update-dom-client"
+class="slide level2">
+<h2>Using JSON response to update DOM (client)</h2>
+<ul>
+<li>Get JSON from server</li>
+<li>Use <a
+href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse">JSON.parse</a>
+to make an Array/Object</li>
+<li>Iterate through the response with
+<ul>
+<li><a
+href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of">for…of</a>
+for an Array</li>
+<li><a
+href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in">for…in</a>
+for an Object</li>
+</ul></li>
+<li>Create/append/update DOM nodes based on result</li>
+<li>Could use <a
+href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of">template
+literals</a> to update <a
+href="https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML">innerHTML</a></li>
+</ul>
+</section>
+<section id="json-with-express-server" class="slide level2">
+<h2>JSON with express (server)</h2>
 <p>Add middleware for JSON body parsing</p>
 <pre><code>app.use(express.json());</code></pre>
 <p>Then access <code>req.body</code> within a <code>.post</code>
-route</p>
+route.</p>
+<p>To send JSON jwith express either - use <a
+href="https://expressjs.com/en/api.html#res.json">res.json</a> - pass <a
+href="https://expressjs.com/en/api.html#res.send">res.send</a> an Array
+or Object</p>
 </section>
 <section id="writing-json-to-a-file" class="slide level2">
 <h2>Writing JSON to a file</h2>
 <ul>
+<li>Server-side only (nodejs)</li>
 <li>Convert object to JSON with <code>JSON.stringify</code></li>
 <li>Use <code>writeFileSync</code> from the <code>fs</code> module</li>
 </ul>
@@ -102,6 +133,7 @@ fs.writeFileSync(&#39;./file.json&#39;, data);</code></pre>
 <section id="loading-json-from-a-file" class="slide level2">
 <h2>Loading JSON from a file</h2>
 <ul>
+<li>Server-side only (nodejs)</li>
 <li>Could load a file and then use <code>JSON.parse</code></li>
 <li>Or simply</li>
 </ul>
