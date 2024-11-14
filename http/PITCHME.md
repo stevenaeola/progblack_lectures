@@ -7,6 +7,7 @@
 ## Possible responses from a web request
 
 Responses include ...
+
 - A plain text file
 - An image file (jpeg, gif, png)
 - An executable (.exe, .msi)
