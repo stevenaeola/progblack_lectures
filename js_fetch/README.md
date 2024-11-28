@@ -97,20 +97,6 @@ This does not work: browser console says
 - Or, better, serve from the same place
 
 
-## Serving client  content through node
-
-- Add this line to server (middleware)
-```
-app.use(express.static('client'));
-```
-- Put all static content in `client` directory
-- E.g. html, client JS, CSS, images, sounds
-- Access via server (without `client` in url)
-```
-127.0.0.1:8090/index.html
-```
-
-
 ## Promises
 
 - Fetch uses [promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises)

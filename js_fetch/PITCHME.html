@@ -138,19 +138,6 @@ Policy</a></h2>
 <li>Or, better, serve from the same place</li>
 </ul>
 </section>
-<section id="serving-client-content-through-node" class="slide level2">
-<h2>Serving client content through node</h2>
-<ul>
-<li>Add this line to server (middleware)</li>
-</ul>
-<pre><code>app.use(express.static(&#39;client&#39;));</code></pre>
-<ul>
-<li>Put all static content in <code>client</code> directory</li>
-<li>E.g. html, client JS, CSS, images, sounds</li>
-<li>Access via server (without <code>client</code> in url)</li>
-</ul>
-<pre><code>127.0.0.1:8090/index.html</code></pre>
-</section>
 <section id="promises" class="slide level2">
 <h2>Promises</h2>
 <ul>
