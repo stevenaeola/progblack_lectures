@@ -42,8 +42,8 @@
 
 - There are very many JavaScript unit testing frameworks (mocha, jasmine, ava)
 - I recommend using [Jest](https://jestjs.io/)
-- Read a [recent review](https://medium.com/welldone-software/an-overview-of-javascript-testing-7ce7298b9870)
-- Also see [StateofJS](https://2022.stateofjs.com/en-US/libraries/testing/)
+- Read a [recent review](https://raygun.com/blog/javascript-unit-testing-frameworks/)
+- Also see [StateofJS](https://2023.stateofjs.com/en-US/libraries/testing/)
 - `npm install --save-dev jest`
 - Tests are js programs (as in jUnit)
 - Put tests in test directory or name .test.js
