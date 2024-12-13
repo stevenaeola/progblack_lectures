@@ -58,7 +58,7 @@ module.exports = {
 
 - Work on second assignment: collaborative project
 - No more practicals
-- Weekly drop-in sessions 10:00 Wednesdays CG85
+- Weekly drop-in sessions 10:00 Fridays D110
 - Sometimes specific content
   - second assignment choosing a project
   - completing a peer review
